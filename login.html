@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Stackly</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+</head>
+<body>
+<section class="auth-container">
+    <!-- LEFT: branding hero -->
+    <div class="auth-left">
+        <div class="auth-shape anim-shape-1"></div>
+        <div class="auth-shape anim-shape-2"></div>
+        <div class="auth-shape anim-shape-3"></div>
+        <div class="auth-left-inner">
+            <a href="index.html" class="auth-brand"><img src="images/stackly-logo.webp" alt="Stackly"></a>
+            <h2>Welcome Back to <span>Your Dashboard</span></h2>
+            <p class="auth-tagline">Sign in to access your projects, analytics, reports, and team workspace — all in one place.</p>
+            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=85" alt="Business professional working" class="auth-image">
+            <div class="auth-back">
+                <a href="index.html"><i class="uil uil-arrow-left"></i> Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- RIGHT: login form -->
+    <div class="auth-right">
+        <div class="auth-form">
+            <a href="index.html" class="auth-form-logo" aria-label="Stackly home">
+                <img src="images/stackly-logo.webp" alt="Stackly">
+            </a>
+            <h2>Sign In</h2>
+            <p class="auth-subtitle">Enter your credentials to access your account</p>
+
+            <form id="loginForm" autocomplete="off" novalidate>
+                <div class="form-group">
+                    <label for="loginEmail"><i class="uil uil-envelope"></i> Email</label>
+                    <input type="email" id="loginEmail" placeholder="Enter your email" autocomplete="off">
+                    <span class="error-message">Please enter a valid email address</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="loginPassword"><i class="uil uil-lock"></i> Password</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="loginPassword" placeholder="Enter your password">
+                        <button type="button" class="password-toggle" id="togglePassword" aria-label="Toggle password visibility">
+                            <i class="uil uil-eye" id="togglePasswordIcon"></i>
+                        </button>
+                    </div>
+                    <span class="error-message">Password must be at least 6 characters</span>
+                </div>
+
+                <div class="form-options">
+                    <label class="form-check">
+                        <input type="checkbox" id="rememberMe" class="custom-checkbox">
+                        <span class="checkmark"></span>
+                        Remember Me
+                    </label>
+                    <a href="404.html" class="forgot-password">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Login <i class="uil uil-arrow-right"></i></button>
+            </form>
+
+            <div class="auth-divider"><span>or continue with</span></div>
+
+            <div class="social-login">
+                <button class="social-btn" type="button" onclick="window.location.href='404.html'">
+                    <svg class="google-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.35 12.23c0-.72-.06-1.42-.18-2.09H12v3.96h5.24a4.48 4.48 0 0 1-1.94 2.94v2.45h3.14c1.84-1.7 2.91-4.2 2.91-7.26Z"/><path fill="#34A853" d="M12 21.5c2.63 0 4.84-.87 6.45-2.36l-3.14-2.45c-.87.58-1.98.92-3.31.92-2.54 0-4.69-1.72-5.46-4.03H3.3v2.53A9.74 9.74 0 0 0 12 21.5Z"/><path fill="#FBBC05" d="M6.54 13.58A5.85 5.85 0 0 1 6.23 12c0-.55.1-1.09.31-1.58V7.89H3.3A9.75 9.75 0 0 0 2.25 12c0 1.57.38 3.05 1.05 4.11l3.24-2.53Z"/><path fill="#EA4335" d="M12 6.39c1.43 0 2.71.49 3.72 1.46l2.79-2.79C16.84 3.47 14.63 2.5 12 2.5a9.74 9.74 0 0 0-8.7 5.39l3.24 2.53C6.31 8.11 8.46 6.39 12 6.39Z"/></svg>
+                    Google
+                </button>
+            </div>
+
+            <p class="auth-footer-text">Don't have an account? <a href="signup.html">Sign Up</a></p>
+        </div>
+    </div>
+</section>
+<script src="js/script.js"></script>
+</body>
+</html>

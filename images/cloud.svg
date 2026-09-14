@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4fc3f7"/>
+      <stop offset="100%" style="stop-color:#e1f5fe"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)"/>
+  <!-- Main cloud -->
+  <ellipse cx="200" cy="120" rx="80" ry="45" fill="#ffffff" opacity="0.35"/>
+  <ellipse cx="160" cy="125" rx="50" ry="35" fill="#ffffff" opacity="0.3"/>
+  <ellipse cx="240" cy="125" rx="50" ry="35" fill="#ffffff" opacity="0.3"/>
+  <ellipse cx="200" cy="105" rx="55" ry="30" fill="#ffffff" opacity="0.4"/>
+  <!-- Small clouds -->
+  <ellipse cx="80" cy="70" rx="30" ry="18" fill="#ffffff" opacity="0.2"/>
+  <ellipse cx="330" cy="85" rx="35" ry="20" fill="#ffffff" opacity="0.2"/>
+  <!-- Download arrows -->
+  <line x1="170" y1="165" x2="170" y2="200" stroke="#0277bd" stroke-width="3" opacity="0.4"/>
+  <polygon points="160,200 170,215 180,200" fill="#0277bd" opacity="0.4"/>
+  <line x1="200" y1="165" x2="200" y2="210" stroke="#0277bd" stroke-width="3" opacity="0.5"/>
+  <polygon points="190,210 200,225 210,210" fill="#0277bd" opacity="0.5"/>
+  <line x1="230" y1="165" x2="230" y2="200" stroke="#0277bd" stroke-width="3" opacity="0.4"/>
+  <polygon points="220,200 230,215 240,200" fill="#0277bd" opacity="0.4"/>
+  <!-- Server icons -->
+  <rect x="130" y="230" width="60" height="25" rx="4" fill="#0277bd" opacity="0.2"/>
+  <rect x="210" y="230" width="60" height="25" rx="4" fill="#0277bd" opacity="0.2"/>
+  <!-- Dots on servers -->
+  <circle cx="142" cy="242" r="3" fill="#ffffff" opacity="0.4"/>
+  <circle cx="152" cy="242" r="3" fill="#ffffff" opacity="0.3"/>
+  <circle cx="222" cy="242" r="3" fill="#ffffff" opacity="0.4"/>
+  <circle cx="232" cy="242" r="3" fill="#ffffff" opacity="0.3"/>
+  <!-- Connection lines -->
+  <line x1="160" y1="215" x2="160" y2="230" stroke="#0277bd" stroke-width="1.5" opacity="0.3" stroke-dasharray="3,3"/>
+  <line x1="200" y1="225" x2="200" y2="230" stroke="#0277bd" stroke-width="1.5" opacity="0.3" stroke-dasharray="3,3"/>
+  <line x1="240" y1="215" x2="240" y2="230" stroke="#0277bd" stroke-width="1.5" opacity="0.3" stroke-dasharray="3,3"/>
+</svg>

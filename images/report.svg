@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1565c0"/>
+      <stop offset="100%" style="stop-color:#283593"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)"/>
+  <!-- Document -->
+  <rect x="100" y="40" width="120" height="155" rx="5" fill="#e8eaf6" opacity="0.15"/>
+  <rect x="110" y="55" width="80" height="6" rx="3" fill="#e8eaf6" opacity="0.25"/>
+  <rect x="110" y="70" width="100" height="4" rx="2" fill="#e8eaf6" opacity="0.12"/>
+  <rect x="110" y="82" width="90" height="4" rx="2" fill="#e8eaf6" opacity="0.12"/>
+  <rect x="110" y="94" width="100" height="4" rx="2" fill="#e8eaf6" opacity="0.12"/>
+  <rect x="110" y="106" width="70" height="4" rx="2" fill="#e8eaf6" opacity="0.12"/>
+  <!-- Chart on document -->
+  <rect x="110" y="125" width="95" height="55" rx="3" fill="#e8eaf6" opacity="0.08"/>
+  <polyline points="120,170 140,155 160,162 180,145 195,150" stroke="#e8eaf6" stroke-width="1.5" fill="none" opacity="0.3"/>
+  <!-- Second document -->
+  <rect x="200" y="70" width="110" height="145" rx="5" fill="#e8eaf6" opacity="0.1"/>
+  <rect x="210" y="85" width="60" height="5" rx="2" fill="#e8eaf6" opacity="0.2"/>
+  <rect x="210" y="98" width="80" height="3" rx="1" fill="#e8eaf6" opacity="0.1"/>
+  <rect x="210" y="108" width="75" height="3" rx="1" fill="#e8eaf6" opacity="0.1"/>
+  <rect x="210" y="118" width="80" height="3" rx="1" fill="#e8eaf6" opacity="0.1"/>
+  <!-- Pie chart on doc2 -->
+  <circle cx="255" cy="175" r="25" fill="none" stroke="#e8eaf6" stroke-width="2" opacity="0.2"/>
+  <path d="M255,175 L255,150 A25,25 0 0,1 278,190 Z" fill="#e8eaf6" opacity="0.2"/>
+  <!-- Pen -->
+  <line x1="330" y1="50" x2="370" y2="230" stroke="#e8eaf6" stroke-width="3" opacity="0.2"/>
+  <polygon points="370,230 363,220 377,220" fill="#e8eaf6" opacity="0.25"/>
+  <!-- Binder clips -->
+  <rect x="130" y="38" width="15" height="8" rx="2" fill="#e8eaf6" opacity="0.2"/>
+  <rect x="230" y="68" width="15" height="8" rx="2" fill="#e8eaf6" opacity="0.18"/>
+</svg>

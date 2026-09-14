@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports | Stackly</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+</head>
+<body>
+<div class="dashboard-layout">
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="dashboard.html" class="sidebar-logo"><img src="images/stackly-logo.webp" alt="Stackly"></a>
+            <p>Business Platform</p>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="dashboard.html" class="sidebar-item"><i class="uil uil-apps"></i><span>Dashboard</span></a></li>
+            <li><a href="business-overview.html" class="sidebar-item"><i class="uil uil-chart-line"></i><span>Business Overview</span></a></li>
+            <li><a href="analytics.html" class="sidebar-item"><i class="uil uil-analytics"></i><span>Analytics</span></a></li>
+            <li><a href="projects.html" class="sidebar-item"><i class="uil uil-transaction"></i><span>Projects</span></a></li>
+            <li><a href="clients.html" class="sidebar-item"><i class="uil uil-users-alt"></i><span>Clients</span></a></li>
+            <li><a href="reports.html" class="sidebar-item active"><i class="uil uil-file-alt"></i><span>Reports</span></a></li>
+            <li><a href="team.html" class="sidebar-item"><i class="uil uil-user-square"></i><span>Team</span></a></li>
+            <li><a href="settings.html" class="sidebar-item"><i class="uil uil-setting"></i><span>Settings</span></a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <button class="sidebar-logout logout-btn" type="button"><i class="uil uil-signout"></i><span>Logout</span></button>
+        </div>
+    </aside>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <main class="main-content">
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="mobile-sidebar-toggle" id="mobileSidebarToggle"><i class="uil uil-bars"></i></button>
+                <h1 id="pageTitle">Reports</h1>
+            </div>
+            <div class="topbar-right">
+                <div class="topbar-search"><i class="uil uil-search"></i><input type="text" placeholder="Search..."></div>
+                <div class="notification-wrapper" id="notificationWrapper">
+                    <button class="topbar-notification" id="notificationBell"><i class="uil uil-bell"></i><span class="notification-badge">3</span></button>
+                    <div class="notification-dropdown" id="notificationDropdown">
+                        <div class="notification-item"><i class="uil uil-check-circle"></i><div><strong>Project completed</strong><p>FinCore ERP delivered</p></div><small>2h ago</small></div>
+                        <div class="notification-item"><i class="uil uil-user-plus"></i><div><strong>New team member</strong><p>Sarah joined your team</p></div><small>5h ago</small></div>
+                        <div class="notification-item"><i class="uil uil-chart-line"></i><div><strong>Revenue milestone</strong><p>Q3 target hit</p></div><small>1d ago</small></div>
+                    </div>
+                </div>
+                <div class="topbar-user">
+                    <div class="topbar-avatar" id="topbarAvatar">S</div>
+                    <div class="topbar-user-name"><strong>Stackly User</strong><small>Administrator</small></div>
+                </div>
+                <button class="logout-btn" id="logoutBtn"><i class="uil uil-signout"></i></button>
+            </div>
+        </header>
+        <div class="dashboard-content reports-page">
+
+            <!-- Page Header -->
+            <div class="page-header">
+                <div class="page-header-left">
+                    <h2>Reports</h2>
+                    <p>Access, generate, and manage all your business reports</p>
+                </div>
+            </div>
+
+            <!-- Report Stats -->
+            <div class="dashboard-grid">
+                <div class="stat-card">
+                    <div class="stat-icon blue"><i class="uil uil-file-alt"></i></div>
+                    <div class="stat-info">
+                        <h3>120</h3>
+                        <p>Total Reports</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon orange"><i class="uil uil-calendar-alt"></i></div>
+                    <div class="stat-info">
+                        <h3>14</h3>
+                        <p>Monthly Reports</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon green"><i class="uil uil-download-alt"></i></div>
+                    <div class="stat-info">
+                        <h3>890</h3>
+                        <p>Downloaded</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon purple"><i class="uil uil-exclamation-circle"></i></div>
+                    <div class="stat-info">
+                        <h3>6</h3>
+                        <p>Pending Review</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Report -->
+            <div class="report-featured card">
+                <div class="report-featured-content">
+                    <div class="report-featured-text">
+                        <h3>Monthly Business Performance Report</h3>
+                        <p class="report-date"><i class="uil uil-calendar-alt"></i> September 2026</p>
+                        <p class="report-description">Comprehensive overview of business performance metrics including revenue analysis, project delivery rates, client satisfaction scores, and team productivity benchmarks for the current reporting period.</p>
+                        <div class="report-completeness">
+                            <div class="progress-header">
+                                <span>Data completeness</span>
+                                <span>86%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 86%; background: #6C63FF;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="report-featured-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=85" alt="Professional reviewing a business report">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reports Grid -->
+            <h3 class="section-title">Available Reports</h3>
+            <div class="services-grid">
+
+                <!-- Report 1 -->
+                <div class="report-card card">
+                    <div class="card-icon blue" aria-label="Financial Report"><span class="report-initials">FR</span></div>
+                    <div class="report-badge">Financial</div>
+                    <h4>Monthly Financial Report</h4>
+                    <p>Complete financial summary including revenue, expenses, and profit margins for the month.</p>
+                    <div class="report-card-footer">
+                        <span class="report-date"><i class="uil uil-calendar-alt"></i> Sep 2026</span>
+                    </div>
+                </div>
+
+                <!-- Report 2 -->
+                <div class="report-card card">
+                    <div class="card-icon green" aria-label="Project Performance"><span class="report-initials">PP</span></div>
+                    <div class="report-badge">Performance</div>
+                    <h4>Project Performance Report</h4>
+                    <p>Analysis of project delivery timelines, milestone achievements, and team performance metrics.</p>
+                    <div class="report-card-footer">
+                        <span class="report-date"><i class="uil uil-calendar-alt"></i> Aug 2026</span>
+                    </div>
+                </div>
+
+                <!-- Report 3 -->
+                <div class="report-card card">
+                    <div class="card-icon orange" aria-label="Client Satisfaction"><span class="report-initials">CS</span></div>
+                    <div class="report-badge">Client</div>
+                    <h4>Client Satisfaction Report</h4>
+                    <p>Client feedback analysis, satisfaction scores, and recommendations for service improvement.</p>
+                    <div class="report-card-footer">
+                        <span class="report-date"><i class="uil uil-calendar-alt"></i> Aug 2026</span>
+                    </div>
+                </div>
+
+                <!-- Report 4 -->
+                <div class="report-card card">
+                    <div class="card-icon purple" aria-label="Annual Business"><span class="report-initials">AB</span></div>
+                    <div class="report-badge">Annual</div>
+                    <h4>Annual Business Review</h4>
+                    <p>Year-end comprehensive review of business growth, key achievements, and strategic outlook.</p>
+                    <div class="report-card-footer">
+                        <span class="report-date"><i class="uil uil-calendar-alt"></i> Jul 2026</span>
+                    </div>
+                </div>
+
+                <!-- Report 5 -->
+                <div class="report-card card">
+                    <div class="card-icon green" aria-label="Team Productivity"><span class="report-initials">TP</span></div>
+                    <div class="report-badge">Team</div>
+                    <h4>Team Productivity Report</h4>
+                    <p>Individual and team productivity tracking, workload distribution, and capacity analysis.</p>
+                    <div class="report-card-footer">
+                        <span class="report-date"><i class="uil uil-calendar-alt"></i> Aug 2026</span>
+                    </div>
+                </div>
+
+                <!-- Report 6 -->
+                <div class="report-card card">
+                    <div class="card-icon blue" aria-label="Market Trends"><span class="report-initials">MT</span></div>
+                    <div class="report-badge">Analytics</div>
+                    <h4>Market Trends Analysis</h4>
+                    <p>Market research insights, industry trends, and competitive analysis for strategic planning.</p>
+                    <div class="report-card-footer">
+                        <span class="report-date"><i class="uil uil-calendar-alt"></i> Sep 2026</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Charts Section -->
+            <div class="two-column-grid">
+
+                <!-- Report Generation Trend -->
+                <div class="card chart-card">
+                    <div class="card-header">
+                        <h3><i class="uil uil-chart-pie"></i> Report Generation Trend</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container">
+                            <canvas id="reportsPie"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reporting Schedule -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3><i class="uil uil-calendar-alt"></i> Reporting Schedule</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="schedule-list">
+                            <div class="schedule-item">
+                                <div class="schedule-info">
+                                    <strong>Monthly business review</strong>
+                                    <span>1st of month</span>
+                                </div>
+                                <span class="status-badge active">On time</span>
+                            </div>
+                            <div class="schedule-item">
+                                <div class="schedule-info">
+                                    <strong>Quarterly analytics</strong>
+                                    <span>Quarterly</span>
+                                </div>
+                                <span class="status-badge active">On time</span>
+                            </div>
+                            <div class="schedule-item">
+                                <div class="schedule-info">
+                                    <strong>Team reviews</strong>
+                                    <span>Weekly</span>
+                                </div>
+                                <span class="status-badge active">On time</span>
+                            </div>
+                            <div class="schedule-item">
+                                <div class="schedule-info">
+                                    <strong>Client insights</strong>
+                                    <span>Monthly</span>
+                                </div>
+                                <span class="status-badge pending">Pending</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Download History Table -->
+            <div class="table-card card">
+                <div class="card-header">
+                    <h3><i class="uil uil-download-alt"></i> Download History</h3>
+                </div>
+                <div class="card-body">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Report</th>
+                                <th>Type</th>
+                                <th>Generated</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Q3 Financial Summary</strong></td>
+                                <td>Financial</td>
+                                <td>Sep 1, 2026</td>
+                                <td><span class="status-badge active">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>August Client Report</strong></td>
+                                <td>Client</td>
+                                <td>Sep 2, 2026</td>
+                                <td><span class="status-badge active">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Team Performance Aug</strong></td>
+                                <td>Team</td>
+                                <td>Sep 3, 2026</td>
+                                <td><span class="status-badge active">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Market Trends Q3</strong></td>
+                                <td>Analytics</td>
+                                <td>Sep 5, 2026</td>
+                                <td><span class="status-badge progress">In Progress</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Annual Revenue Analysis</strong></td>
+                                <td>Financial</td>
+                                <td>Sep 8, 2026</td>
+                                <td><span class="status-badge pending">Pending</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- CTA Banner -->
+            <div class="cta-banner card">
+                <div class="cta-content">
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=900&q=85" alt="Team scheduling business reports" class="cta-image">
+                    <div class="cta-text">
+                        <h3>Schedule Custom Reports</h3>
+                        <p>Automate your reporting workflow by scheduling custom reports to be generated and delivered on your preferred timeline.</p>
+                        <a href="dashboard.html" class="btn btn-primary"><i class="uil uil-setting"></i> Go to Dashboard</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</div>
+
+<!-- Logout Modal -->
+<div class="modal-overlay" id="logoutModal">
+    <div class="modal">
+        <span class="modal-icon"><i class="uil uil-signout"></i></span>
+        <h3>Are you sure you want to logout?</h3>
+        <p>You will need to sign in again to access your dashboard.</p>
+        <div class="modal-buttons">
+            <button class="btn btn-danger" id="confirmLogout">Confirm</button>
+            <button class="btn btn-secondary" id="cancelLogout">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<script src="js/script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+    var c = document.getElementById('reportsPie');
+    if (c && window.drawPieChart) {
+        drawPieChart('reportsPie', [
+            {label: 'Financial', value: 35, color: '#6C63FF'},
+            {label: 'Performance', value: 25, color: '#00D4AA'},
+            {label: 'Client', value: 20, color: '#FFC107'},
+            {label: 'Analytics', value: 20, color: '#FF6584'}
+        ]);
+    }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#283593"/>
+      <stop offset="100%" style="stop-color:#5c6bc0"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)"/>
+  <!-- Shoulders/body -->
+  <ellipse cx="200" cy="280" rx="80" ry="50" fill="#c5cae9" opacity="0.25"/>
+  <!-- Neck -->
+  <rect x="185" y="200" width="30" height="35" rx="8" fill="#c5cae9" opacity="0.3"/>
+  <!-- Head -->
+  <circle cx="200" cy="160" r="45" fill="#c5cae9" opacity="0.35"/>
+  <!-- Hair (short) -->
+  <path d="M158,148 Q160,112 200,107 Q240,112 242,148" fill="#c5cae9" opacity="0.2"/>
+  <!-- Glasses -->
+  <circle cx="182" cy="162" r="14" fill="none" stroke="#c5cae9" stroke-width="1.5" opacity="0.2"/>
+  <circle cx="218" cy="162" r="14" fill="none" stroke="#c5cae9" stroke-width="1.5" opacity="0.2"/>
+  <line x1="196" y1="162" x2="204" y2="162" stroke="#c5cae9" stroke-width="1.5" opacity="0.2"/>
+  <!-- Shoulders -->
+  <path d="M140,240 Q145,215 185,210 L215,210 Q255,215 260,240" fill="#c5cae9" opacity="0.22"/>
+  <!-- Tie -->
+  <polygon points="195,212 200,245 205,212" fill="#c5cae9" opacity="0.15"/>
+  <!-- Name tag area -->
+  <rect x="160" y="250" width="80" height="25" rx="4" fill="#c5cae9" opacity="0.08"/>
+</svg>

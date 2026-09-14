@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a148c"/>
+      <stop offset="100%" style="stop-color:#1565c0"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)"/>
+  <!-- Brain/mind icon -->
+  <ellipse cx="200" cy="100" rx="50" ry="40" fill="#e1bee7" opacity="0.12"/>
+  <path d="M165,90 Q175,60 200,65 Q225,60 235,90" stroke="#e1bee7" stroke-width="1.5" fill="none" opacity="0.2"/>
+  <path d="M165,110 Q175,135 200,130 Q225,135 235,110" stroke="#e1bee7" stroke-width="1.5" fill="none" opacity="0.2"/>
+  <!-- Light bulb inside brain -->
+  <circle cx="200" cy="95" r="18" fill="#e1bee7" opacity="0.2"/>
+  <!-- Spark/idea lines -->
+  <line x1="200" y1="60" x2="200" y2="48" stroke="#e1bee7" stroke-width="1.5" opacity="0.25"/>
+  <line x1="220" y1="65" x2="228" y2="55" stroke="#e1bee7" stroke-width="1.5" opacity="0.2"/>
+  <line x1="180" y1="65" x2="172" y2="55" stroke="#e1bee7" stroke-width="1.5" opacity="0.2"/>
+  <!-- Data flow / connections -->
+  <circle cx="80" cy="160" r="6" fill="#e1bee7" opacity="0.25"/>
+  <circle cx="120" cy="200" r="5" fill="#e1bee7" opacity="0.2"/>
+  <circle cx="280" cy="200" r="5" fill="#e1bee7" opacity="0.2"/>
+  <circle cx="320" cy="160" r="6" fill="#e1bee7" opacity="0.25"/>
+  <line x1="200" y1="140" x2="80" y2="160" stroke="#e1bee7" stroke-width="1" opacity="0.15" stroke-dasharray="3,3"/>
+  <line x1="200" y1="140" x2="120" y2="200" stroke="#e1bee7" stroke-width="1" opacity="0.15" stroke-dasharray="3,3"/>
+  <line x1="200" y1="140" x2="280" y2="200" stroke="#e1bee7" stroke-width="1" opacity="0.15" stroke-dasharray="3,3"/>
+  <line x1="200" y1="140" x2="320" y2="160" stroke="#e1bee7" stroke-width="1" opacity="0.15" stroke-dasharray="3,3"/>
+  <!-- Insight bars -->
+  <rect x="80" y="230" width="60" height="35" rx="4" fill="#e1bee7" opacity="0.1"/>
+  <rect x="170" y="220" width="60" height="45" rx="4" fill="#e1bee7" opacity="0.12"/>
+  <rect x="260" y="225" width="60" height="40" rx="4" fill="#e1bee7" opacity="0.1"/>
+  <!-- Magnifying glass -->
+  <circle cx="330" cy="230" r="20" fill="none" stroke="#e1bee7" stroke-width="2" opacity="0.2"/>
+  <line x1="345" y1="245" x2="360" y2="260" stroke="#e1bee7" stroke-width="3" opacity="0.2"/>
+</svg>

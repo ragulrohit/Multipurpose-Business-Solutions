@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1565c0"/>
+      <stop offset="100%" style="stop-color:#42a5f5"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)"/>
+  <!-- Shoulders/body -->
+  <ellipse cx="200" cy="280" rx="80" ry="50" fill="#e3f2fd" opacity="0.25"/>
+  <!-- Neck -->
+  <rect x="185" y="200" width="30" height="35" rx="8" fill="#e3f2fd" opacity="0.3"/>
+  <!-- Head -->
+  <circle cx="200" cy="160" r="45" fill="#e3f2fd" opacity="0.35"/>
+  <!-- Hair (short, professional) -->
+  <path d="M155,145 Q160,115 200,110 Q240,115 245,145" fill="#e3f2fd" opacity="0.2"/>
+  <!-- Shoulders -->
+  <path d="M140,240 Q145,215 185,210 L215,210 Q255,215 260,240" fill="#e3f2fd" opacity="0.22"/>
+  <!-- Suit collar -->
+  <path d="M175,210 L200,240 L225,210" stroke="#e3f2fd" stroke-width="2" fill="none" opacity="0.2"/>
+  <!-- Subtle name tag area -->
+  <rect x="160" y="250" width="80" height="25" rx="4" fill="#e3f2fd" opacity="0.08"/>
+</svg>

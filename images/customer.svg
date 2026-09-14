@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff7043"/>
+      <stop offset="100%" style="stop-color:#ff9800"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)"/>
+  <!-- Heart icon -->
+  <path d="M200,100 C200,80 175,60 160,75 C145,90 145,100 200,140 C255,100 255,90 240,75 C225,60 200,80 200,100" fill="#fff3e0" opacity="0.35"/>
+  <!-- Star rating -->
+  <polygon points="120,170 125,185 140,185 128,195 132,210 120,200 108,210 112,195 100,185 115,185" fill="#fff3e0" opacity="0.4"/>
+  <polygon points="160,170 165,185 180,185 168,195 172,210 160,200 148,210 152,195 140,185 155,185" fill="#fff3e0" opacity="0.4"/>
+  <polygon points="200,170 205,185 220,185 208,195 212,210 200,200 188,210 192,195 180,185 195,185" fill="#fff3e0" opacity="0.4"/>
+  <polygon points="240,170 245,185 260,185 248,195 252,210 240,200 228,210 232,195 220,185 235,185" fill="#fff3e0" opacity="0.4"/>
+  <polygon points="280,170 285,185 300,185 288,195 292,210 280,200 268,210 272,195 260,185 275,185" fill="#fff3e0" opacity="0.3"/>
+  <!-- Person silhouette -->
+  <circle cx="80" cy="100" r="18" fill="#fff3e0" opacity="0.6"/>
+  <rect x="67" y="118" width="26" height="32" rx="4" fill="#fff3e0" opacity="0.55"/>
+  <!-- Person silhouette 2 -->
+  <circle cx="320" cy="100" r="18" fill="#fff3e0" opacity="0.6"/>
+  <rect x="307" y="118" width="26" height="32" rx="4" fill="#fff3e0" opacity="0.55"/>
+  <!-- Speech bubble -->
+  <rect x="140" y="230" width="120" height="40" rx="20" fill="#fff3e0" opacity="0.2"/>
+  <polygon points="180,270 190,280 200,270" fill="#fff3e0" opacity="0.2"/>
+  <!-- Thumbs up -->
+  <circle cx="200" cy="245" r="10" fill="#fff3e0" opacity="0.35"/>
+</svg>

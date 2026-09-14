@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clients | Stackly</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+</head>
+<body>
+<div class="dashboard-layout">
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="dashboard.html" class="sidebar-logo"><img src="images/stackly-logo.webp" alt="Stackly"></a>
+            <p>Business Platform</p>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="dashboard.html" class="sidebar-item"><i class="uil uil-apps"></i><span>Dashboard</span></a></li>
+            <li><a href="business-overview.html" class="sidebar-item"><i class="uil uil-chart-line"></i><span>Business Overview</span></a></li>
+            <li><a href="analytics.html" class="sidebar-item"><i class="uil uil-analytics"></i><span>Analytics</span></a></li>
+            <li><a href="projects.html" class="sidebar-item"><i class="uil uil-transaction"></i><span>Projects</span></a></li>
+            <li><a href="clients.html" class="sidebar-item active"><i class="uil uil-users-alt"></i><span>Clients</span></a></li>
+            <li><a href="reports.html" class="sidebar-item"><i class="uil uil-file-alt"></i><span>Reports</span></a></li>
+            <li><a href="team.html" class="sidebar-item"><i class="uil uil-user-square"></i><span>Team</span></a></li>
+            <li><a href="settings.html" class="sidebar-item"><i class="uil uil-setting"></i><span>Settings</span></a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <button class="sidebar-logout logout-btn" type="button"><i class="uil uil-signout"></i><span>Logout</span></button>
+        </div>
+    </aside>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <main class="main-content">
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="mobile-sidebar-toggle" id="mobileSidebarToggle"><i class="uil uil-bars"></i></button>
+                <h1 id="pageTitle">Clients</h1>
+            </div>
+            <div class="topbar-right">
+                <div class="topbar-search"><i class="uil uil-search"></i><input type="text" placeholder="Search..."></div>
+                <div class="notification-wrapper" id="notificationWrapper">
+                    <button class="topbar-notification" id="notificationBell"><i class="uil uil-bell"></i><span class="notification-badge">3</span></button>
+                    <div class="notification-dropdown" id="notificationDropdown">
+                        <div class="notification-item"><i class="uil uil-check-circle"></i><div><strong>Project completed</strong><p>FinCore ERP delivered</p></div><small>2h ago</small></div>
+                        <div class="notification-item"><i class="uil uil-user-plus"></i><div><strong>New team member</strong><p>Sarah joined your team</p></div><small>5h ago</small></div>
+                        <div class="notification-item"><i class="uil uil-chart-line"></i><div><strong>Revenue milestone</strong><p>Q3 target hit</p></div><small>1d ago</small></div>
+                    </div>
+                </div>
+                <div class="topbar-user">
+                    <div class="topbar-avatar" id="topbarAvatar">S</div>
+                    <div class="topbar-user-name"><strong>Stackly User</strong><small>Administrator</small></div>
+                </div>
+                <button class="logout-btn" id="logoutBtn"><i class="uil uil-signout"></i></button>
+            </div>
+        </header>
+        <div class="dashboard-content clients-page">
+
+            <!-- Page Header -->
+            <div class="page-header">
+                <div class="page-header-left">
+                    <h2>Clients</h2>
+                    <p>Manage your client relationships and track engagement</p>
+                </div>
+            </div>
+
+            <!-- Client Stats -->
+            <div class="dashboard-grid">
+                <div class="stat-card">
+                    <div class="stat-icon blue"><i class="uil uil-users-alt"></i></div>
+                    <div class="stat-info">
+                        <h3>168</h3>
+                        <p>Total Clients</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon green"><i class="uil uil-user-plus"></i></div>
+                    <div class="stat-info">
+                        <h3>12</h3>
+                        <p>New This Month</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon orange"><i class="uil uil-briefcase"></i></div>
+                    <div class="stat-info">
+                        <h3>96</h3>
+                        <p>Active Projects</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon purple"><i class="uil uil-star"></i></div>
+                    <div class="stat-info">
+                        <h3>94%</h3>
+                        <p>Satisfaction Rate</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Clients Grid -->
+            <h3 class="section-title">Client Directory</h3>
+            <div class="clients-grid">
+
+                <!-- Client 1 -->
+                <div class="client-card card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=85" alt="Sarah Mitchell">
+                    </div>
+                    <div class="card-body">
+                        <div class="client-avatar">
+                            <span>SM</span>
+                        </div>
+                        <h4>Sarah Mitchell</h4>
+                        <p class="client-company">NovaTech Retail</p>
+                        <div class="client-contact">
+                            <div class="contact-row"><i class="uil uil-envelope"></i><span>sarah@novatech.com</span></div>
+                            <div class="contact-row"><i class="uil uil-phone"></i><span>+1 (555) 234-5678</span></div>
+                        </div>
+                        <div class="client-project">
+                            <span class="project-label"><i class="uil uil-briefcase"></i> Omnichannel Suite</span>
+                        </div>
+                        <div class="client-footer">
+                            <span class="status-badge active">Active</span>
+                            <div class="client-rating">
+                                <i class="uil uil-star filled"></i>
+                                <i class="uil uil-star filled"></i>
+                                <i class="uil uil-star filled"></i>
+                                <i class="uil uil-star filled"></i>
+                                <i class="uil uil-star filled"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Client 2 -->
+                <div class="client-card card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=85" alt="David Chen">
+                    </div>
+                    <div class="card-body">
+                        <div class="client-avatar">
+                            <span>DC</span>
+                        </div>
+                        <h4>David Chen</h4>
+                        <p class="client-company">FinCore Capital</p>
+                        <div class="client-contact">
+                            <div class="contact-row"><i class="uil uil-envelope"></i><span>david@fincore.com</span></div>
+                            <div class="contact-row"><i class="uil uil-phone"></i><span>+1 (555) 345-6789</span></div>
+                        </div>
+                        <div class="client-project">
+                            <span class="project-label"><i class="uil uil-briefcase"></i> Compliance ERP</span>
+                        </div>
+                        <div class="client-footer">
+                            <span class="status-badge progress">In Progress</span>
+                            <div class="client-rating">
+                                <i class="uil uil-star filled"></i>
+                                <i class="uil uil-star filled"></i>
+                                <i class="uil uil-star filled"></i>
+                                <i class="uil uil-star filled"></i>
+                                <i class="uil uil-star filled"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Client 3 -->
+                <div class="client-card card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=85" alt="Amira Hassan">
+                    </div>
+                    <div class="card-body">
+                        <div class="client-avatar">
+                            <span>AH</span>
+                        </div>
+                        <h4>Amira Hassan</h4>
+                        <p class="client-company">MedLife Group</p>
+                        <div class="client-contact">
+                            <div class="contact-row"><i class="uil uil-envelope"></i><span>amira@medlife.com</span></div>
+                            <div class="contact-row"><i class="uil uil-phone"></i><span>+1 (555) 456-7890</span></div>
+                        </div>
+                        <div class="client-project">
+                            <span class="project-label"><i class="uil uil-briefcase"></i> Patient Platform</span>
+                        </div>
+                        <div class="client-footer">
+                            <span class="status-badge progress">In Progress</span>
+                            <div class="client-rating">
+                                <i class="uil uil-star filled"></i>
+                                <i class="uil uil-star filled"></i>
+                                <i class="uil uil-star filled"></i>
+                                <i class="uil uil-star filled"></i>
+                                <i class="uil uil-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Client 4 -->
+                <div class="client-card card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=85" alt="James O'Brien">
+                    </div>
+                    <div class="card-body">
+                        <div class="client-avatar">
+                            <span>JO</span>
+                        </div>
+                        <h4>James O'Brien</h4>
+                        <p class="client-company">Vertex Stores</p>
+                        <div class="client-contact">
+                            <div class="contact-row"><i class="uil uil-envelope"></i><span>james@vertex.io</span></div>
+                            <div class="contact-row"><i class="uil uil-phone"></i><span>+1 (555) 567-8901</span></div>
+                        </div>
+                        <div class="client-project">
+                            <span class="project-label"><i class="uil uil-briefcase"></i> RetailAI Suite</span>
+                        </div>
+                        <div class="client-footer">
+                            <span class="status-badge active">Active</span>
+                            <div class="client-rating">
+                                <i class="uil uil-star filled"></i>
+                                <i class="uil uil-star filled"></i>
+                                <i class="uil uil-star filled"></i>
+                                <i class="uil uil-star filled"></i>
+                                <i class="uil uil-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Two Column: Table + Chart -->
+            <div class="two-column-grid">
+
+                <!-- Top Clients by Revenue -->
+                <div class="table-card card">
+                    <div class="card-header">
+                        <h3><i class="uil uil-dollar-sign"></i> Top Clients by Revenue</h3>
+                    </div>
+                    <div class="card-body">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Client</th>
+                                    <th>Company</th>
+                                    <th>Revenue</th>
+                                    <th>Projects</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Sarah Mitchell</strong></td>
+                                    <td>NovaTech Retail</td>
+                                    <td><strong>$240K</strong></td>
+                                    <td>3</td>
+                                    <td><span class="status-badge active">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>David Chen</strong></td>
+                                    <td>FinCore Capital</td>
+                                    <td><strong>$210K</strong></td>
+                                    <td>5</td>
+                                    <td><span class="status-badge progress">In Progress</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Amira Hassan</strong></td>
+                                    <td>MedLife Group</td>
+                                    <td><strong>$175K</strong></td>
+                                    <td>2</td>
+                                    <td><span class="status-badge progress">In Progress</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>James O'Brien</strong></td>
+                                    <td>Vertex Stores</td>
+                                    <td><strong>$160K</strong></td>
+                                    <td>4</td>
+                                    <td><span class="status-badge active">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Elena Kovács</strong></td>
+                                    <td>Pinnacle Labs</td>
+                                    <td><strong>$120K</strong></td>
+                                    <td>2</td>
+                                    <td><span class="status-badge pending">Pending</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Client Acquisition Chart -->
+                <div class="card chart-card">
+                    <div class="card-header">
+                        <h3><i class="uil uil-chart-pie"></i> Client Acquisition</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container">
+                            <canvas id="clientsPie"></canvas>
+                        </div>
+                        <div class="progress-section">
+                            <div class="progress-item">
+                                <div class="progress-header">
+                                    <span>Enterprise Growth</span>
+                                    <span>62%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 62%; background: #6C63FF;"></div>
+                                </div>
+                            </div>
+                            <div class="progress-item">
+                                <div class="progress-header">
+                                    <span>Mid-Market</span>
+                                    <span>48%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 48%; background: #00D4AA;"></div>
+                                </div>
+                            </div>
+                            <div class="progress-item">
+                                <div class="progress-header">
+                                    <span>SME</span>
+                                    <span>35%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 35%; background: #FFC107;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Client Distribution by Region -->
+            <h3 class="section-title">Client Distribution by Region</h3>
+            <div class="region-grid">
+                <div class="region-card card">
+                    <div class="region-info">
+                        <h4>North America</h4>
+                        <span class="region-value">32%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 32%; background: #6C63FF;"></div>
+                    </div>
+                </div>
+                <div class="region-card card">
+                    <div class="region-info">
+                        <h4>Europe</h4>
+                        <span class="region-value">28%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 28%; background: #00D4AA;"></div>
+                    </div>
+                </div>
+                <div class="region-card card">
+                    <div class="region-info">
+                        <h4>Middle East & Africa</h4>
+                        <span class="region-value">22%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 22%; background: #FFC107;"></div>
+                    </div>
+                </div>
+                <div class="region-card card">
+                    <div class="region-info">
+                        <h4>Asia-Pacific</h4>
+                        <span class="region-value">18%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 18%; background: #FF6584;"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</div>
+
+<!-- Logout Modal -->
+<div class="modal-overlay" id="logoutModal">
+    <div class="modal">
+        <span class="modal-icon"><i class="uil uil-signout"></i></span>
+        <h3>Are you sure you want to logout?</h3>
+        <p>You will need to sign in again to access your dashboard.</p>
+        <div class="modal-buttons">
+            <button class="btn btn-danger" id="confirmLogout">Confirm</button>
+            <button class="btn btn-secondary" id="cancelLogout">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<script src="js/script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+    var c = document.getElementById('clientsPie');
+    if (c && window.drawPieChart) {
+        drawPieChart('clientsPie', [
+            {label: 'Enterprise', value: 45, color: '#6C63FF'},
+            {label: 'Mid-Market', value: 30, color: '#00D4AA'},
+            {label: 'SME', value: 25, color: '#FFC107'}
+        ]);
+    }
+});
+</script>
+</body>
+</html>

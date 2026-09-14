@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics | Stackly</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+</head>
+<body>
+<div class="dashboard-layout">
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="dashboard.html" class="sidebar-logo"><img src="images/stackly-logo.webp" alt="Stackly"></a>
+            <p>Business Platform</p>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="dashboard.html" class="sidebar-item"><i class="uil uil-apps"></i><span>Dashboard</span></a></li>
+            <li><a href="business-overview.html" class="sidebar-item"><i class="uil uil-chart-line"></i><span>Business Overview</span></a></li>
+            <li><a href="analytics.html" class="sidebar-item active"><i class="uil uil-analytics"></i><span>Analytics</span></a></li>
+            <li><a href="projects.html" class="sidebar-item"><i class="uil uil-transaction"></i><span>Projects</span></a></li>
+            <li><a href="clients.html" class="sidebar-item"><i class="uil uil-users-alt"></i><span>Clients</span></a></li>
+            <li><a href="reports.html" class="sidebar-item"><i class="uil uil-file-alt"></i><span>Reports</span></a></li>
+            <li><a href="team.html" class="sidebar-item"><i class="uil uil-user-square"></i><span>Team</span></a></li>
+            <li><a href="settings.html" class="sidebar-item"><i class="uil uil-setting"></i><span>Settings</span></a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <button class="sidebar-logout logout-btn" type="button"><i class="uil uil-signout"></i><span>Logout</span></button>
+        </div>
+    </aside>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <main class="main-content">
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="mobile-sidebar-toggle" id="mobileSidebarToggle"><i class="uil uil-bars"></i></button>
+                <h1 id="pageTitle">Analytics</h1>
+            </div>
+            <div class="topbar-right">
+                <div class="topbar-search"><i class="uil uil-search"></i><input type="text" placeholder="Search..."></div>
+                <div class="notification-wrapper" id="notificationWrapper">
+                    <button class="topbar-notification" id="notificationBell"><i class="uil uil-bell"></i><span class="notification-badge">3</span></button>
+                    <div class="notification-dropdown" id="notificationDropdown">
+                        <div class="notification-item"><i class="uil uil-check-circle"></i><div><strong>Project completed</strong><p>FinCore ERP delivered</p></div><small>2h ago</small></div>
+                        <div class="notification-item"><i class="uil uil-user-plus"></i><div><strong>New team member</strong><p>Sarah joined your team</p></div><small>5h ago</small></div>
+                        <div class="notification-item"><i class="uil uil-chart-line"></i><div><strong>Revenue milestone</strong><p>Q3 target hit</p></div><small>1d ago</small></div>
+                    </div>
+                </div>
+                <div class="topbar-user">
+                    <div class="topbar-avatar" id="topbarAvatar">S</div>
+                    <div class="topbar-user-name"><strong>Stackly User</strong><small>Administrator</small></div>
+                </div>
+                <button class="logout-btn" id="logoutBtn"><i class="uil uil-signout"></i></button>
+            </div>
+        </header>
+        <div class="dashboard-content">
+
+            <div class="page-header-row">
+                <div>
+                    <h2>Analytics Dashboard</h2>
+                    <p>Track your website performance, visitor trends, and conversion metrics in real time.</p>
+                </div>
+                <div class="page-header-actions">
+                    <button class="btn btn-primary btn-small"><span class="pulse-dot"></span> Live Data</button>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="stat-card">
+                    <div class="stat-icon blue"><i class="uil uil-eye"></i></div>
+                    <div class="stat-info">
+                        <h3>48,600</h3>
+                        <p>Unique Visitors</p>
+                    </div>
+                    <div class="stat-trend up"><i class="uil uil-arrow-up"></i> 12.5%</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon green"><i class="uil uil-analytics"></i></div>
+                    <div class="stat-info">
+                        <h3>4.8%</h3>
+                        <p>Conversion Rate</p>
+                    </div>
+                    <div class="stat-trend up"><i class="uil uil-arrow-up"></i> 0.7%</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon orange"><i class="uil uil-clock"></i></div>
+                    <div class="stat-info">
+                        <h3>12m</h3>
+                        <p>Avg. Session (mins)</p>
+                    </div>
+                    <div class="stat-trend up"><i class="uil uil-arrow-up"></i> 3.2%</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon purple"><i class="uil uil-arrow-down"></i></div>
+                    <div class="stat-info">
+                        <h3>32%</h3>
+                        <p>Bounce Rate</p>
+                    </div>
+                    <div class="stat-trend down"><i class="uil uil-arrow-down"></i> 4.1%</div>
+                </div>
+            </div>
+
+            <div id="analyticsCharts" class="charts-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3><i class="uil uil-pie-chart"></i> Traffic Sources</h3>
+                    </div>
+                    <div class="card-body chart-container">
+                        <canvas id="analyticsPie"></canvas>
+                        <div class="chart-legend">
+                            <span class="legend-item"><span class="legend-dot" style="background:#6C63FF"></span> Organic 40%</span>
+                            <span class="legend-item"><span class="legend-dot" style="background:#00D4AA"></span> Direct 25%</span>
+                            <span class="legend-item"><span class="legend-dot" style="background:#FFC107"></span> Referral 20%</span>
+                            <span class="legend-item"><span class="legend-dot" style="background:#FF6584"></span> Social 15%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3><i class="uil uil-chart-bar"></i> Performance Metrics</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="progress-item">
+                            <div class="progress-label"><span>SEO Score</span><span>82%</span></div>
+                            <div class="progress-bar"><div class="progress-fill" data-width="82" style="background: linear-gradient(90deg, #6C63FF, #00D4AA);"></div></div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-label"><span>Load Speed</span><span>78%</span></div>
+                            <div class="progress-bar"><div class="progress-fill" data-width="78" style="background: linear-gradient(90deg, #00D4AA, #00e6b8);"></div></div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-label"><span>Engagement</span><span>91%</span></div>
+                            <div class="progress-bar"><div class="progress-fill" data-width="91" style="background: linear-gradient(90deg, #FFC107, #ffcd39);"></div></div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-label"><span>Retention</span><span>74%</span></div>
+                            <div class="progress-bar"><div class="progress-fill" data-width="74" style="background: linear-gradient(90deg, #FF6584, #ff8da1);"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card activity-card">
+                <div class="card-header">
+                    <h3><i class="uil uil-rocket"></i> Real-Time Activity Feed</h3>
+                    <span class="pulse-dot"></span>
+                </div>
+                <div class="card-body">
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon green"><i class="uil uil-check-circle"></i></div>
+                            <div class="activity-info">
+                                <strong>New conversion detected</strong>
+                                <p>Pricing page — Premium signup</p>
+                            </div>
+                            <small class="activity-time">Just now</small>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon blue"><i class="uil uil-user"></i></div>
+                            <div class="activity-info">
+                                <strong>New visitor from organic search</strong>
+                                <p>Landing on /services/cloud-migration</p>
+                            </div>
+                            <small class="activity-time">2 min ago</small>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon orange"><i class="uil uil-clock"></i></div>
+                            <div class="activity-info">
+                                <strong>Session timeout</strong>
+                                <p>User spent 18 min on /blog/insights</p>
+                            </div>
+                            <small class="activity-time">5 min ago</small>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon purple"><i class="uil uil-chart-line"></i></div>
+                            <div class="activity-info">
+                                <strong>Traffic spike detected</strong>
+                                <p>Social referral up 34% in last hour</p>
+                            </div>
+                            <small class="activity-time">12 min ago</small>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon green"><i class="uil uil-dollar-sign"></i></div>
+                            <div class="activity-info">
+                                <strong>Revenue event</strong>
+                                <p>Enterprise plan purchased — $4,200</p>
+                            </div>
+                            <small class="activity-time">18 min ago</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-grid two-col">
+                <div class="card">
+                    <div class="card-header">
+                        <h3><i class="uil uil-chart-line"></i> Top Pages</h3>
+                    </div>
+                    <div class="card-body">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Page</th>
+                                    <th>Views</th>
+                                    <th>Bounce Rate</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>/home</td>
+                                    <td>12,480</td>
+                                    <td>28%</td>
+                                </tr>
+                                <tr>
+                                    <td>/pricing</td>
+                                    <td>8,320</td>
+                                    <td>22%</td>
+                                </tr>
+                                <tr>
+                                    <td>/services</td>
+                                    <td>6,715</td>
+                                    <td>35%</td>
+                                </tr>
+                                <tr>
+                                    <td>/blog/insights</td>
+                                    <td>5,940</td>
+                                    <td>41%</td>
+                                </tr>
+                                <tr>
+                                    <td>/contact</td>
+                                    <td>3,210</td>
+                                    <td>19%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3><i class="uil uil-desktop"></i> Device Breakdown</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="device-item">
+                            <div class="device-label"><i class="uil uil-desktop"></i><span>Desktop</span><strong>62%</strong></div>
+                            <div class="progress-bar"><div class="progress-fill" data-width="62" style="background: linear-gradient(90deg, #6C63FF, #8b85ff);"></div></div>
+                        </div>
+                        <div class="device-item">
+                            <div class="device-label"><i class="uil uil-mobile"></i><span>Mobile</span><strong>30%</strong></div>
+                            <div class="progress-bar"><div class="progress-fill" data-width="30" style="background: linear-gradient(90deg, #00D4AA, #00e6b8);"></div></div>
+                        </div>
+                        <div class="device-item">
+                            <div class="device-label"><i class="uil uil-laptop"></i><span>Tablet</span><strong>8%</strong></div>
+                            <div class="progress-bar"><div class="progress-fill" data-width="8" style="background: linear-gradient(90deg, #FFC107, #ffcd39);"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card banner-card">
+                <div class="banner-content">
+                    <div class="banner-text">
+                        <h3>Dive Deeper Into Your Data</h3>
+                        <p>Generate comprehensive reports and uncover actionable insights to drive growth across every channel.</p>
+                        <a href="reports.html" class="btn btn-primary"><i class="uil uil-file-alt"></i> View Full Reports</a>
+                    </div>
+                    <div class="banner-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=85" alt="Business analyst reviewing data">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</div>
+
+<div class="modal-overlay" id="logoutModal">
+    <div class="modal">
+        <span class="modal-icon"><i class="uil uil-signout"></i></span>
+        <h3>Are you sure you want to logout?</h3>
+        <p>You will need to sign in again to access your dashboard.</p>
+        <div class="modal-buttons">
+            <button class="btn btn-danger" id="confirmLogout">Confirm</button>
+            <button class="btn btn-secondary" id="cancelLogout">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<script src="js/script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+    var c = document.getElementById('analyticsPie');
+    if (c && window.drawPieChart) {
+        drawPieChart('analyticsPie', [
+            {label: 'Organic', value: 40, color: '#6C63FF'},
+            {label: 'Direct', value: 25, color: '#00D4AA'},
+            {label: 'Referral', value: 20, color: '#FFC107'},
+            {label: 'Social', value: 15, color: '#FF6584'}
+        ]);
+    }
+});
+</script>
+</body>
+</html>

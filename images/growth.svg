@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2e7d32"/>
+      <stop offset="100%" style="stop-color:#76ff03"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)"/>
+  <!-- Upward arrow -->
+  <polygon points="200,40 150,120 175,120 175,200 225,200 225,120 250,120" fill="#e8f5e9" opacity="0.35"/>
+  <!-- Growth bars -->
+  <rect x="60" y="220" width="30" height="60" rx="3" fill="#e8f5e9" opacity="0.2"/>
+  <rect x="105" y="190" width="30" height="90" rx="3" fill="#e8f5e9" opacity="0.25"/>
+  <rect x="150" y="170" width="30" height="110" rx="3" fill="#e8f5e9" opacity="0.3"/>
+  <rect x="195" y="140" width="30" height="140" rx="3" fill="#e8f5e9" opacity="0.35"/>
+  <rect x="240" y="110" width="30" height="170" rx="3" fill="#e8f5e9" opacity="0.4"/>
+  <rect x="285" y="80" width="30" height="200" rx="3" fill="#e8f5e9" opacity="0.45"/>
+  <!-- Trend line -->
+  <polyline points="75,220 120,190 165,170 210,140 255,110 300,80" stroke="#ffffff" stroke-width="2.5" fill="none" opacity="0.4"/>
+  <!-- Coins/uptrend symbols -->
+  <circle cx="330" cy="70" r="15" fill="#e8f5e9" opacity="0.3"/>
+  <text x="330" y="75" text-anchor="middle" fill="#e8f5e9" font-size="14" font-family="Arial" opacity="0.5">$</text>
+  <!-- Ground -->
+  <rect x="0" y="280" width="400" height="20" fill="#e8f5e9" opacity="0.08"/>
+</svg>

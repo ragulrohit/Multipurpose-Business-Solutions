@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ad1457"/>
+      <stop offset="100%" style="stop-color:#6a1b9a"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)"/>
+  <!-- Question mark -->
+  <text x="200" y="110" text-anchor="middle" fill="#fce4ec" font-size="100" font-family="Arial" font-weight="bold" opacity="0.25">?</text>
+  <!-- FAQ accordion lines -->
+  <rect x="80" y="140" width="240" height="30" rx="5" fill="#fce4ec" opacity="0.12"/>
+  <line x1="95" y1="155" x2="200" y2="155" stroke="#fce4ec" stroke-width="2" opacity="0.15"/>
+  <text x="295" y="160" text-anchor="middle" fill="#fce4ec" font-size="14" font-family="Arial" opacity="0.3">+</text>
+  <rect x="80" y="178" width="240" height="30" rx="5" fill="#fce4ec" opacity="0.1"/>
+  <line x1="95" y1="193" x2="220" y2="193" stroke="#fce4ec" stroke-width="2" opacity="0.12"/>
+  <text x="295" y="198" text-anchor="middle" fill="#fce4ec" font-size="14" font-family="Arial" opacity="0.25">+</text>
+  <rect x="80" y="216" width="240" height="30" rx="5" fill="#fce4ec" opacity="0.08"/>
+  <line x1="95" y1="231" x2="180" y2="231" stroke="#fce4ec" stroke-width="2" opacity="0.1"/>
+  <text x="295" y="236" text-anchor="middle" fill="#fce4ec" font-size="14" font-family="Arial" opacity="0.2">+</text>
+  <!-- Help bubble -->
+  <circle cx="330" cy="80" r="25" fill="#fce4ec" opacity="0.15"/>
+  <text x="330" y="86" text-anchor="middle" fill="#fce4ec" font-size="20" font-family="Arial" opacity="0.3">?</text>
+  <!-- Chat support icon -->
+  <rect x="50" y="60" width="50" height="40" rx="8" fill="#fce4ec" opacity="0.1"/>
+  <polygon points="70,100 60,115 80,100" fill="#fce4ec" opacity="0.1"/>
+</svg>

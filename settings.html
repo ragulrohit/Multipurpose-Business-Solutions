@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings | Stackly</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <style>
+        /* ============================================
+           Stackly - Settings page supplemental styles
+           ============================================ */
+        .topbar-left h1 { font-size: 1.25rem; font-weight: 700; color: var(--dark); margin: 0; }
+
+        .page-header { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-bottom: 28px; }
+        .page-header-left h2 { font-size: 1.65rem; color: var(--dark); margin-bottom: 6px; }
+        .page-header-left p { color: var(--gray-600); font-size: 0.92rem; margin-bottom: 0; }
+
+        /* Settings layout */
+        .settings-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
+        @media (max-width: 900px) { .settings-grid { grid-template-columns: 1fr; } }
+
+        .settings-form-card, .settings-card { background: var(--white); border-radius: var(--radius-xl); padding: 28px; box-shadow: var(--shadow-card); border: 1px solid var(--gray-200); transition: all var(--transition-base); }
+        .settings-form-card { margin-bottom: 24px; }
+        .settings-card { margin-bottom: 24px; }
+        .settings-card:last-child { margin-bottom: 0; }
+        .settings-form-card:hover, .settings-card:hover { box-shadow: var(--shadow-card-hover); }
+
+        .settings-form-card h3, .settings-card h3 { font-size: 1.05rem; color: var(--dark); margin-bottom: 20px; }
+        .settings-form-card h3 i, .settings-card h3 i { margin-right: 8px; color: var(--primary); }
+        .settings-subtitle { padding-top: 22px; border-top: 1px solid var(--gray-200); margin-top: 4px; }
+
+        .settings-avatar { width: 66px; height: 66px; border-radius: 50%; background: var(--gradient-primary); color: var(--white); font-weight: 800; font-size: 1.5rem; display: flex; align-items: center; justify-content: center; margin-bottom: 22px; box-shadow: var(--shadow-primary); }
+
+        .btn-block { width: 100%; }
+
+        /* Toggle switches */
+        .toggle-switch { position: relative; display: inline-block; width: 48px; height: 26px; flex-shrink: 0; }
+        .toggle-switch input { opacity: 0; width: 0; height: 0; }
+        .toggle-slider { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: var(--gray-300); border-radius: var(--radius-full); cursor: pointer; transition: background var(--transition-base); }
+        .toggle-slider::before { content: ''; position: absolute; left: 3px; top: 3px; width: 20px; height: 20px; background: #fff; border-radius: 50%; transition: transform var(--transition-base); box-shadow: var(--shadow-sm); }
+        .toggle-switch input:checked + .toggle-slider { background: var(--primary); }
+        .toggle-switch input:checked + .toggle-slider::before { transform: translateX(22px); }
+
+        /* Setting rows */
+        .setting-item { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--gray-100); }
+        .setting-item:last-child { border-bottom: none; }
+        .setting-label { font-size: 0.9rem; color: var(--gray-800); font-weight: 600; }
+        .setting-desc { font-size: 0.78rem; color: var(--gray-500); margin-top: 2px; }
+
+        /* Accent swatches */
+        .accent-swatches { display: flex; gap: 12px; }
+        .accent-swatch { width: 32px; height: 32px; border-radius: 50%; border: 2px solid transparent; cursor: pointer; transition: all var(--transition-fast); box-shadow: var(--shadow-sm); }
+        .accent-swatch:hover { transform: scale(1.15); }
+        .accent-swatch.selected { border-color: var(--dark); box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.25); }
+
+        /* Danger zone */
+        .settings-danger { background: rgba(255, 71, 87, 0.08); border: 1px dashed rgba(255, 71, 87, 0.35); border-radius: var(--radius-lg); padding: 18px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+        .settings-danger strong { color: var(--danger); font-size: 0.95rem; display: block; }
+        .settings-danger p { font-size: 0.82rem; color: var(--gray-600); margin: 4px 0 0; max-width: 320px; }
+
+        /* Password fields */
+        .form-group input[type="password"] { padding-right: 50px; }
+
+        /* Shell extras */
+        .sidebar-user { display: flex; align-items: center; gap: 12px; }
+        .sidebar-user-info strong { display: block; color: #fff; font-size: 0.85rem; line-height: 1.4; }
+        .sidebar-user-info small { color: rgba(255, 255, 255, 0.55); font-size: 0.75rem; }
+
+        .topbar-user { display: flex; align-items: center; gap: 12px; }
+        .topbar-user-name { display: flex; flex-direction: column; line-height: 1.35; }
+        .topbar-user-name strong { font-size: 0.88rem; color: var(--dark); }
+        .topbar-user-name small { font-size: 0.74rem; color: var(--gray-500); }
+        @media (max-width: 768px) { .topbar-user-name { display: none; } }
+
+        .topbar-notification, .logout-btn { position: relative; width: 42px; height: 42px; border-radius: 50%; background: var(--light); display: inline-flex; align-items: center; justify-content: center; color: var(--gray-700); font-size: 1.1rem; transition: all var(--transition-fast); cursor: pointer; border: none; flex-shrink: 0; }
+        .topbar-notification:hover, .logout-btn:hover { background: var(--primary); color: #fff; }
+
+        .notification-wrapper { position: relative; }
+        .notification-dropdown { position: absolute; right: 0; top: calc(100% + 14px); width: 320px; background: #fff; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); border: 1px solid var(--gray-200); opacity: 0; visibility: hidden; transform: translateY(10px); transition: all var(--transition-base); z-index: var(--z-dropdown); }
+        .notification-dropdown.active { opacity: 1; visibility: visible; transform: translateY(0); }
+        .notification-item { display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px; border-bottom: 1px solid var(--gray-100); }
+        .notification-item:last-child { border-bottom: none; }
+        .notification-item > i { margin-top: 4px; font-size: 1rem; color: #6C63FF; width: 20px; text-align: center; flex-shrink: 0; }
+        .notification-item > i.uil-user-plus { color: #00D4AA; }
+        .notification-item > i.uil-chart-line { color: #FF6584; }
+        .notification-item strong { display: block; color: var(--dark); font-size: 0.85rem; }
+        .notification-item p { color: var(--gray-600); font-size: 0.78rem; margin: 2px 0 0; }
+        .notification-item small { color: var(--gray-400); font-size: 0.72rem; white-space: nowrap; margin-left: auto; }
+
+        /* Logout modal */
+        .modal-icon { width: 64px; height: 64px; border-radius: 50%; background: rgba(255, 101, 132, 0.12); color: #FF6584; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 18px; }
+        .modal h3 { font-size: 1.2rem; color: var(--dark); margin-bottom: 8px; text-align: center; }
+        .modal p { text-align: center; }
+        .modal-buttons { justify-content: center; }
+    </style>
+</head>
+<body>
+<div class="dashboard-layout">
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="dashboard.html" class="sidebar-logo"><img src="images/stackly-logo.webp" alt="Stackly"></a>
+            <p>Business Platform</p>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="dashboard.html" class="sidebar-item"><i class="uil uil-apps"></i><span>Dashboard</span></a></li>
+            <li><a href="business-overview.html" class="sidebar-item"><i class="uil uil-chart-line"></i><span>Business Overview</span></a></li>
+            <li><a href="analytics.html" class="sidebar-item"><i class="uil uil-analytics"></i><span>Analytics</span></a></li>
+            <li><a href="projects.html" class="sidebar-item"><i class="uil uil-transaction"></i><span>Projects</span></a></li>
+            <li><a href="clients.html" class="sidebar-item"><i class="uil uil-users-alt"></i><span>Clients</span></a></li>
+            <li><a href="reports.html" class="sidebar-item"><i class="uil uil-file-alt"></i><span>Reports</span></a></li>
+            <li><a href="team.html" class="sidebar-item"><i class="uil uil-user-square"></i><span>Team</span></a></li>
+            <li><a href="settings.html" class="sidebar-item active"><i class="uil uil-setting"></i><span>Settings</span></a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <button class="sidebar-logout logout-btn" type="button"><i class="uil uil-signout"></i><span>Logout</span></button>
+        </div>
+    </aside>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <main class="main-content">
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="mobile-sidebar-toggle" id="mobileSidebarToggle"><i class="uil uil-bars"></i></button>
+                <h1 id="pageTitle">Settings</h1>
+            </div>
+            <div class="topbar-right">
+                <div class="topbar-search"><i class="uil uil-search"></i><input type="text" placeholder="Search..."></div>
+                <div class="notification-wrapper" id="notificationWrapper">
+                    <button class="topbar-notification" id="notificationBell"><i class="uil uil-bell"></i><span class="notification-badge">3</span></button>
+                    <div class="notification-dropdown" id="notificationDropdown">
+                        <div class="notification-item"><i class="uil uil-check-circle"></i><div><strong>Project completed</strong><p>FinCore ERP delivered</p></div><small>2h ago</small></div>
+                        <div class="notification-item"><i class="uil uil-user-plus"></i><div><strong>New team member</strong><p>Sarah joined your team</p></div><small>5h ago</small></div>
+                        <div class="notification-item"><i class="uil uil-chart-line"></i><div><strong>Revenue milestone</strong><p>Q3 target hit</p></div><small>1d ago</small></div>
+                    </div>
+                </div>
+                <div class="topbar-user">
+                    <div class="topbar-avatar" id="topbarAvatar">S</div>
+                    <div class="topbar-user-name"><strong>Stackly User</strong><small>Administrator</small></div>
+                </div>
+                <button class="logout-btn" id="logoutBtn"><i class="uil uil-signout"></i></button>
+            </div>
+        </header>
+        <div class="dashboard-content">
+
+            <!-- Page Header -->
+            <div class="page-header">
+                <div class="page-header-left">
+                    <h2>Settings</h2>
+                    <p>Manage your account, notifications and preferences</p>
+                </div>
+            </div>
+
+            <div class="settings-grid">
+
+                <!-- Profile & Password Settings -->
+                <div class="settings-form-card scroll-reveal">
+                    <h3><i class="uil uil-cog"></i> Profile Settings</h3>
+                    <form id="settingsForm" novalidate>
+                        <div class="settings-avatar" id="settingsAvatar">S</div>
+                        <div class="form-group">
+                            <label for="settingsName">Full Name</label>
+                            <input type="text" id="settingsName" value="Stackly User" placeholder="Full Name" autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="settingsEmail">Email</label>
+                            <input type="email" id="settingsEmail" value="user@stackly.com" placeholder="Email" autocomplete="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="settingsPhone">Phone</label>
+                            <input type="tel" id="settingsPhone" value="+1 (555) 000-0000" placeholder="Phone" inputmode="tel" autocomplete="tel">
+                        </div>
+
+                        <h3 class="settings-subtitle"><i class="uil uil-lock"></i> Password Settings</h3>
+                        <div class="form-group">
+                            <label for="settingsCurrentPassword">Current Password</label>
+                            <div class="password-wrapper">
+                                <input type="password" id="settingsCurrentPassword" placeholder="Current Password" autocomplete="current-password">
+                                <button type="button" class="password-toggle" data-toggle-password="settingsCurrentPassword" aria-label="Toggle password visibility"><i class="uil uil-eye"></i></button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="settingsNewPassword">New Password</label>
+                            <input type="password" id="settingsNewPassword" placeholder="New Password" autocomplete="new-password">
+                        </div>
+                        <div class="form-group">
+                            <label for="settingsConfirmPassword">Confirm Password</label>
+                            <input type="password" id="settingsConfirmPassword" placeholder="Confirm New Password" autocomplete="new-password">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-lg btn-block" id="settingsSaveBtn"><i class="uil uil-save"></i> Save Changes</button>
+                    </form>
+                </div>
+
+                <!-- Notification, Theme & Account -->
+                <div>
+
+                    <div class="settings-card scroll-reveal">
+                        <h3><i class="uil uil-bell"></i> Notification Settings</h3>
+                        <div class="setting-item">
+                            <div>
+                                <div class="setting-label">Email notifications</div>
+                                <div class="setting-desc">Receive project updates via email</div>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="notifyEmail" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <div>
+                                <div class="setting-label">Push notifications</div>
+                                <div class="setting-desc">Get real-time alerts on your device</div>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="notifyPush">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <div>
+                                <div class="setting-label">Weekly digest</div>
+                                <div class="setting-desc">Summary of the week's activity</div>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="notifyDigest">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="settings-card scroll-reveal">
+                        <h3><i class="uil uil-palette"></i> Theme Preferences</h3>
+                        <div class="setting-item">
+                            <div>
+                                <div class="setting-label">Dark mode</div>
+                                <div class="setting-desc">Switch to a dark color scheme</div>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="darkModeToggle">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <div>
+                                <div class="setting-label">Accent color</div>
+                                <div class="setting-desc">Personalize your dashboard</div>
+                            </div>
+                            <div class="accent-swatches">
+                                <button class="accent-swatch selected" type="button" style="background: #6C63FF;" data-color="#6C63FF" aria-label="Purple accent"></button>
+                                <button class="accent-swatch" type="button" style="background: #00D4AA;" data-color="#00D4AA" aria-label="Teal accent"></button>
+                                <button class="accent-swatch" type="button" style="background: #FF6584;" data-color="#FF6584" aria-label="Coral accent"></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="settings-card scroll-reveal">
+                        <h3><i class="uil uil-shield-check"></i> Account</h3>
+                        <div class="settings-danger">
+                            <div>
+                                <strong>Danger zone</strong>
+                                <p>Deleting your account will permanently remove all of your data.</p>
+                            </div>
+                            <button class="btn btn-danger btn-sm" id="deleteAccountBtn" type="button"><i class="uil uil-trash-alt"></i> Delete Account</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+</div>
+
+<!-- Logout Modal -->
+<div class="modal-overlay" id="logoutModal">
+    <div class="modal">
+        <span class="modal-icon"><i class="uil uil-signout"></i></span>
+        <h3>Are you sure you want to logout?</h3>
+        <p>You will need to sign in again to access your dashboard.</p>
+        <div class="modal-buttons">
+            <button class="btn btn-danger" id="confirmLogout">Confirm</button>
+            <button class="btn btn-secondary" id="cancelLogout">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<script>
+/* ============================================================
+   Settings page helper — handles the shell behaviours
+   (mobile sidebar, notifications, logout modal) and the
+   password visibility toggles. Profile form persistence,
+   dark mode and toggle toasts are handled by js/script.js
+   via the shared settingsForm / settingsName / settingsEmail /
+   settingsPhone / settingsSaveBtn / darkModeToggle identifiers.
+   ============================================================ */
+document.addEventListener('DOMContentLoaded', function () {
+    var sidebar = document.getElementById('sidebar');
+    var overlay = document.getElementById('sidebarOverlay');
+    var mobileToggle = document.getElementById('mobileSidebarToggle');
+
+    if (mobileToggle && sidebar && overlay) {
+        mobileToggle.addEventListener('click', function () {
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        });
+        overlay.addEventListener('click', function () {
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+    }
+
+    var bell = document.getElementById('notificationBell');
+    var dropdown = document.getElementById('notificationDropdown');
+    if (bell && dropdown) {
+        bell.addEventListener('click', function (e) {
+            e.stopPropagation();
+            dropdown.classList.toggle('active');
+        });
+        document.addEventListener('click', function (e) {
+            if (dropdown && !dropdown.contains(e.target) && e.target !== bell) {
+                dropdown.classList.remove('active');
+            }
+        });
+    }
+
+    var logoutBtn = document.getElementById('logoutBtn');
+    var logoutModal = document.getElementById('logoutModal');
+    var confirmLogout = document.getElementById('confirmLogout');
+    var cancelLogout = document.getElementById('cancelLogout');
+    if (logoutBtn && logoutModal) {
+        logoutBtn.addEventListener('click', function () {
+            logoutModal.classList.add('active');
+        });
+        if (confirmLogout) {
+            confirmLogout.addEventListener('click', function () {
+                logoutModal.classList.remove('active');
+                window.location.href = 'login.html';
+            });
+        }
+        if (cancelLogout) {
+            cancelLogout.addEventListener('click', function () {
+                logoutModal.classList.remove('active');
+            });
+        }
+        logoutModal.addEventListener('click', function (e) {
+            if (e.target === logoutModal) logoutModal.classList.remove('active');
+        });
+    }
+
+    var toggleButtons = document.querySelectorAll('.password-toggle');
+    toggleButtons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var input = document.getElementById(btn.getAttribute('data-toggle-password'));
+            if (!input) return;
+            var isPassword = input.type === 'password';
+            input.type = isPassword ? 'text' : 'password';
+            btn.innerHTML = '<i class="' + (isPassword ? 'uil uil-eye-slash' : 'uil uil-eye') + '"></i>';
+        });
+    });
+});
+</script>
+<script src="js/script.js"></script>
+</body>
+</html>

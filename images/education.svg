@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f9a825"/>
+      <stop offset="100%" style="stop-color:#e65100"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)"/>
+  <!-- Graduation cap -->
+  <polygon points="200,40 140,75 200,110 260,75" fill="#fff3e0" opacity="0.3"/>
+  <rect x="192" y="75" width="16" height="25" fill="#fff3e0" opacity="0.25"/>
+  <line x1="140" y1="75" x2="140" y2="100" stroke="#fff3e0" stroke-width="2" opacity="0.25"/>
+  <line x1="260" y1="75" x2="260" y2="100" stroke="#fff3e0" stroke-width="2" opacity="0.25"/>
+  <!-- Book -->
+  <path d="M140,140 Q200,130 200,170 Q200,130 260,140 L260,200 Q200,190 200,200 Q200,190 140,200 Z" fill="#fff3e0" opacity="0.2"/>
+  <!-- Pages -->
+  <line x1="170" y1="150" x2="195" y2="145" stroke="#fff3e0" stroke-width="0.8" opacity="0.2"/>
+  <line x1="170" y1="165" x2="195" y2="160" stroke="#fff3e0" stroke-width="0.8" opacity="0.2"/>
+  <line x1="170" y1="180" x2="195" y2="175" stroke="#fff3e0" stroke-width="0.8" opacity="0.2"/>
+  <!-- Light bulb / knowledge -->
+  <circle cx="200" cy="65" r="20" fill="#fff3e0" opacity="0.15"/>
+  <!-- Student silhouettes -->
+  <circle cx="100" cy="220" r="14" fill="#fff3e0" opacity="0.35"/>
+  <rect x="89" y="234" width="22" height="28" rx="3" fill="#fff3e0" opacity="0.3"/>
+  <circle cx="160" cy="215" r="16" fill="#fff3e0" opacity="0.3"/>
+  <rect x="147" y="231" width="26" height="30" rx="3" fill="#fff3e0" opacity="0.28"/>
+  <circle cx="240" cy="215" r="16" fill="#fff3e0" opacity="0.3"/>
+  <rect x="227" y="231" width="26" height="30" rx="3" fill="#fff3e0" opacity="0.28"/>
+  <circle cx="300" cy="220" r="14" fill="#fff3e0" opacity="0.35"/>
+  <rect x="289" y="234" width="22" height="28" rx="3" fill="#fff3e0" opacity="0.3"/>
+</svg>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2e7d32"/>
+      <stop offset="100%" style="stop-color:#66bb6a"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)"/>
+  <!-- Shoulders/body -->
+  <ellipse cx="200" cy="280" rx="80" ry="50" fill="#e8f5e9" opacity="0.25"/>
+  <!-- Neck -->
+  <rect x="185" y="200" width="30" height="35" rx="8" fill="#e8f5e9" opacity="0.3"/>
+  <!-- Head -->
+  <circle cx="200" cy="160" r="45" fill="#e8f5e9" opacity="0.35"/>
+  <!-- Hair (medium-long, professional) -->
+  <path d="M153,155 Q150,105 200,100 Q250,105 247,155 L250,180" fill="#e8f5e9" opacity="0.2"/>
+  <path d="M153,155 L150,180" fill="#e8f5e9" opacity="0.2"/>
+  <!-- Hair wave detail -->
+  <path d="M160,160 Q175,148 190,155 Q210,148 240,160" stroke="#e8f5e9" stroke-width="1" fill="none" opacity="0.12"/>
+  <!-- Shoulders -->
+  <path d="M140,240 Q145,215 185,210 L215,210 Q255,215 260,240" fill="#e8f5e9" opacity="0.22"/>
+  <!-- Blazer lapels -->
+  <path d="M170,212 L180,240 L200,225" stroke="#e8f5e9" stroke-width="1.5" fill="none" opacity="0.18"/>
+  <path d="M230,212 L220,240 L200,225" stroke="#e8f5e9" stroke-width="1.5" fill="none" opacity="0.18"/>
+  <!-- Name tag area -->
+  <rect x="160" y="250" width="80" height="25" rx="4" fill="#e8f5e9" opacity="0.08"/>
+</svg>

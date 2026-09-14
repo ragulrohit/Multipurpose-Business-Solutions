@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Stackly</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+</head>
+<body>
+
+<!-- ========== NAVBAR ========== -->
+<header class="navbar" id="navbar">
+    <div class="container nav-container">
+        <a href="index.html" class="nav-logo"><img src="images/stackly-logo.webp" alt="Stackly"></a>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="services.html" class="nav-link">Services</a></li>
+            <li><a href="solutions.html" class="nav-link">Solutions</a></li>
+            <li><a href="contact.html" class="nav-link active">Contact</a></li>
+            <li class="nav-auth">
+                <a href="login.html" class="nav-btn-login">Login</a>
+                <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+            </li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+</header>
+
+<!-- ========== PAGE HERO ========== -->
+<section class="page-hero">
+    <div class="container text-center">
+        <span class="hero-badge">Get In Touch</span>
+        <h1>Let's Build Something <span class="gradient-text">Great Together</span></h1>
+        <p>Tell us about your business challenge. Our experts will get back to you within 24 hours.</p>
+    </div>
+</section>
+
+<!-- ========== CONTACT SECTION ========== -->
+<section class="contact-section" id="contact">
+    <div class="container">
+        <div class="contact-wrapper">
+            <!-- LEFT: Contact Form -->
+            <div class="contact-form-card scroll-reveal">
+                <h3>Send Us a Message</h3>
+                <p class="contact-form-subtitle">Fill in the form below and our team will reach out shortly.</p>
+                <form id="contactForm" novalidate>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contactName"><i class="uil uil-user"></i> Full Name</label>
+                            <input type="text" id="contactName" placeholder="Your name">
+                            <span class="error-message">Please enter your name</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail"><i class="uil uil-envelope"></i> Email</label>
+                            <input type="email" id="contactEmail" placeholder="you@company.com">
+                            <span class="error-message">Please enter a valid email</span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contactPhone"><i class="uil uil-phone"></i> Phone</label>
+                            <input type="tel" id="contactPhone" placeholder="+1 555 123 4567">
+                            <span class="error-message">Please enter a valid phone number</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactCompany"><i class="uil uil-building"></i> Company <small>(optional)</small></label>
+                            <input type="text" id="contactCompany" placeholder="Your company name">
+                            <span class="error-message">Please enter your company</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactMessage"><i class="uil uil-comment-dots"></i> Message</label>
+                        <textarea id="contactMessage" rows="5" placeholder="Tell us about your project or inquiry..."></textarea>
+                        <span class="error-message">Message must be at least 10 characters</span>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Send Message <i class="uil uil-send"></i></button>
+                </form>
+                <div id="contactSuccess" class="form-success" style="display:none;">
+                    <i class="uil uil-check-circle"></i>
+                    <h4>Message Sent Successfully!</h4>
+                    <p>Thank you for reaching out. Our team will get back to you within 24 hours.</p>
+                </div>
+            </div>
+
+            <!-- RIGHT: Contact Info -->
+            <div class="contact-info-side scroll-reveal">
+                <div class="contact-info-image">
+                    <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=85" alt="Support team helping a customer">
+                </div>
+                <h3>Contact Information</h3>
+                <p>Reach out through any of the channels below.</p>
+                <div class="contact-info-card">
+                    <span class="contact-info-icon"><i class="uil uil-map-marker"></i></span>
+                    <div>
+                        <h4>Main Office</h4>
+                        <p>500 Tech Avenue, Business Bay, Dubai, UAE</p>
+                    </div>
+                </div>
+                <div class="contact-info-card">
+                    <span class="contact-info-icon"><i class="uil uil-phone"></i></span>
+                    <div>
+                        <h4>Phone</h4>
+                        <p>+1 (555) 012-3456</p>
+                    </div>
+                </div>
+                <div class="contact-info-card">
+                    <span class="contact-info-icon"><i class="uil uil-envelope"></i></span>
+                    <div>
+                        <h4>Email</h4>
+                        <p>hello@stackly.com</p>
+                    </div>
+                </div>
+                <div class="contact-info-card">
+                    <span class="contact-info-icon"><i class="uil uil-clock"></i></span>
+                    <div>
+                        <h4>Working Hours</h4>
+                        <p>Mon - Fri, 9:00 AM - 6:00 PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== MAP / LOCATION SECTION ========== -->
+<section class="location-section scroll-reveal">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-badge">Our Location</span>
+            <h2>Find Us Around <span class="gradient-text">the World</span></h2>
+        </div>
+        <div class="map-placeholder">
+            <iframe
+                src="https://www.google.com/maps?q=Business%20Bay%2C%20Dubai%2C%20UAE&output=embed"
+                title="Stackly office location in Business Bay, Dubai"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+</section>
+
+<!-- ========== CTA SECTION ========== -->
+<section class="cta-section">
+    <div class="container text-center">
+        <span class="section-badge">Ready to Get Started?</span>
+        <h2>Start a Conversation <span class="gradient-text">Today</span></h2>
+        <p>Have a project in mind? Let's discuss how Stackly can transform your business.</p>
+        <div class="cta-buttons">
+            <a href="services.html" class="btn btn-primary btn-lg"><i class="uil uil-headphones"></i> Start a Conversation</a>
+            <a href="signup.html" class="btn btn-outline btn-lg"><i class="uil uil-calendar-alt"></i> Book a Demo</a>
+        </div>
+    </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col footer-brand">
+                <a href="index.html" class="footer-logo"><img src="images/stackly-logo.webp" alt="Stackly"></a>
+                <p>A trusted business partner helping ambitious companies transform, scale, and thrive in the digital age.</p>
+                <div class="footer-social">
+                    <a href="404.html" aria-label="LinkedIn"><i class="uil uil-linkedin-alt"></i></a>
+                    <a href="404.html" aria-label="Twitter"><i class="uil uil-twitter"></i></a>
+                    <a href="404.html" aria-label="Facebook"><i class="uil uil-facebook-f"></i></a>
+                    <a href="404.html" aria-label="Instagram"><i class="uil uil-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="solutions.html">Solutions</a>
+                <a href="industries.html">Industries</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="team.html">Our Team</a>
+                <a href="about.html#values">Our Values</a>
+            </div>
+            <div class="footer-col">
+                <h4>Customer</h4>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="reports.html">Reports</a>
+                <a href="resources.html">Resources</a>
+                <a href="contact.html">Support</a>
+            </div>
+            <div class="footer-col footer-contact-col">
+                <h4>Get In Touch</h4>
+                <div class="footer-contact">
+                    <a href="mailto:hello@stackly.com">hello@stackly.com</a>
+                    <a href="tel:+15550123456">+1 (555) 012-3456</a>
+                    <span>Mon–Sat, 10am–7pm IST</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Stackly. All rights reserved.</p>
+            <p>Made with <i class="uil uil-heart"></i> by Stackly Team</p>
+        </div>
+    </div>
+</footer>
+
+<!-- ========== SCRIPTS ========== -->
+<script src="js/script.js"></script>
+</body>
+</html>

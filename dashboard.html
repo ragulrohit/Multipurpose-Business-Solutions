@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Stackly</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        html, body { width: 100%; max-width: 100%; overflow-x: hidden !important; }
+        .dashboard-layout { position: relative; width: 100%; max-width: 100%; overflow-x: hidden !important; }
+        .dashboard-layout * { box-sizing: border-box; max-width: 100%; }
+        @media (max-width: 1200px) {
+            .sidebar { left: 0 !important; }
+            .main-content { width: 100% !important; max-width: 100% !important; min-width: 0 !important; margin-left: 0 !important; overflow-x: hidden !important; }
+            .dashboard-content, .topbar { width: 100% !important; max-width: 100% !important; overflow-x: hidden !important; }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+</head>
+<body>
+<div class="dashboard-layout">
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="dashboard.html" class="sidebar-logo"><img src="images/stackly-logo.webp" alt="Stackly"></a>
+            <p>Business Platform</p>
+            <button class="sidebar-close" id="sidebarClose" type="button" aria-label="Close menu">X</button>
+        </div>
+        <ul class="sidebar-menu">
+            <li>
+                <a href="dashboard.html" class="sidebar-item active">
+                    <i class="uil uil-apps"></i><span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="business-overview.html" class="sidebar-item">
+                    <i class="uil uil-chart-line"></i><span>Business Overview</span>
+                </a>
+            </li>
+            <li>
+                <a href="analytics.html" class="sidebar-item">
+                    <i class="uil uil-analytics"></i><span>Analytics</span>
+                </a>
+            </li>
+            <li>
+                <a href="projects.html" class="sidebar-item">
+                    <i class="uil uil-transaction"></i><span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="clients.html" class="sidebar-item">
+                    <i class="uil uil-users-alt"></i><span>Clients</span>
+                </a>
+            </li>
+            <li>
+                <a href="reports.html" class="sidebar-item">
+                    <i class="uil uil-file-alt"></i><span>Reports</span>
+                </a>
+            </li>
+            <li>
+                <a href="team.html" class="sidebar-item">
+                    <i class="uil uil-user-square"></i><span>Team</span>
+                </a>
+            </li>
+            <li>
+                <a href="settings.html" class="sidebar-item">
+                    <i class="uil uil-setting"></i><span>Settings</span>
+                </a>
+            </li>
+        </ul>
+        <div class="sidebar-footer">
+            <button class="sidebar-logout logout-btn" type="button"><i class="uil uil-signout"></i><span>Logout</span></button>
+        </div>
+    </aside>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <main class="main-content">
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="mobile-sidebar-toggle" id="mobileSidebarToggle">
+                    <i class="uil uil-bars"></i>
+                </button>
+                <h1 id="pageTitle">Dashboard</h1>
+            </div>
+            <div class="topbar-right">
+                <div class="topbar-user">
+                    <div class="topbar-avatar" id="topbarAvatar">S</div>
+                    <div class="topbar-user-name">
+                        <strong>Stackly User</strong>
+                        <small>Administrator</small>
+                    </div>
+                </div>
+                <button class="logout-btn" id="logoutBtn"><i class="uil uil-signout"></i></button>
+            </div>
+        </header>
+        <div class="dashboard-content">
+            <section class="dashboard-content">
+                <div class="welcome-section scroll-reveal">
+                    <div>
+                        <h2 id="welcomeHeading">Welcome back, User!</h2>
+                        <p id="welcomeEmail">Email: user@stackly.com</p>
+                        <p class="welcome-sub">Here's what's happening with your business today.</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="dashboard-card scroll-reveal">
+                        <div class="dashboard-card-icon blue"><i class="uil uil-briefcase"></i></div>
+                        <h3><span class="counter" data-target="248">0</span></h3>
+                        <p>Total Projects</p>
+                        <span class="trend up"><i class="uil uil-arrow-up"></i> 12% this month</span>
+                    </div>
+                    <div class="dashboard-card scroll-reveal">
+                        <div class="dashboard-card-icon green"><i class="uil uil-users-alt"></i></div>
+                        <h3><span class="counter" data-target="168">0</span></h3>
+                        <p>Active Clients</p>
+                        <span class="trend up"><i class="uil uil-arrow-up"></i> 8% this month</span>
+                    </div>
+                    <div class="dashboard-card scroll-reveal">
+                        <div class="dashboard-card-icon orange"><i class="uil uil-check-circle"></i></div>
+                        <h3><span class="counter" data-target="196">0</span></h3>
+                        <p>Completed Projects</p>
+                        <span class="trend up"><i class="uil uil-arrow-up"></i> 21% this month</span>
+                    </div>
+                    <div class="dashboard-card scroll-reveal">
+                        <div class="dashboard-card-icon purple"><i class="uil uil-rocket"></i></div>
+                        <h3><span class="counter" data-target="32">0</span>%</h3>
+                        <p>Business Growth</p>
+                        <span class="trend up"><i class="uil uil-arrow-up"></i> 5% this quarter</span>
+                    </div>
+                </div>
+
+                <div class="charts-grid">
+                    <div class="chart-card scroll-reveal">
+                        <h3>Project Status Overview</h3>
+                        <p class="chart-subtitle">Distribution of current project statuses</p>
+                        <div class="chart-container">
+                            <canvas id="pieChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card scroll-reveal">
+                        <h3>Revenue Breakdown</h3>
+                        <p class="chart-subtitle">Revenue distribution by category</p>
+                        <div class="revenue-breakdown">
+                            <div class="revenue-breakdown-item">
+                                <div><span>Consulting</span><strong>38%</strong></div>
+                                <div class="revenue-breakdown-bar"><span style="width: 38%; background: #6C63FF;"></span></div>
+                            </div>
+                            <div class="revenue-breakdown-item">
+                                <div><span>Technology Solutions</span><strong>27%</strong></div>
+                                <div class="revenue-breakdown-bar"><span style="width: 27%; background: #00D4AA;"></span></div>
+                            </div>
+                            <div class="revenue-breakdown-item">
+                                <div><span>Analytics</span><strong>21%</strong></div>
+                                <div class="revenue-breakdown-bar"><span style="width: 21%; background: #FF6584;"></span></div>
+                            </div>
+                            <div class="revenue-breakdown-item">
+                                <div><span>Strategy &amp; Growth</span><strong>14%</strong></div>
+                                <div class="revenue-breakdown-bar"><span style="width: 14%; background: #FFC312;"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-card scroll-reveal">
+                    <h3>Business Performance</h3>
+                    <div class="progress-bar-container">
+                        <div class="progress-label"><span>Sales Target</span><span>85%</span></div>
+                        <div class="progress-bar"><div class="progress-fill" data-width="85" style="background: linear-gradient(135deg,#6C63FF,#9C66FF);"></div></div>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-label"><span>Client Satisfaction</span><span>94%</span></div>
+                        <div class="progress-bar"><div class="progress-fill" data-width="94" style="background: linear-gradient(135deg,#00D4AA,#6C63FF);"></div></div>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-label"><span>Operational Efficiency</span><span>78%</span></div>
+                        <div class="progress-bar"><div class="progress-fill" data-width="78" style="background: linear-gradient(135deg,#FF6584,#FFC107);"></div></div>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-label"><span>Team Productivity</span><span>88%</span></div>
+                        <div class="progress-bar"><div class="progress-fill" data-width="88" style="background: linear-gradient(135deg,#00D4AA,#FF6584);"></div></div>
+                    </div>
+                </div>
+
+                <div class="charts-grid table-flex">
+                    <div class="table-card scroll-reveal recent-projects-card">
+                        <h3>Recent Projects</h3>
+                        <table>
+                            <thead>
+                                <tr><th>Project</th><th>Client</th><th>Progress</th><th>Status</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td data-label="Project">FinCore ERP</td><td data-label="Client">FinCore</td><td data-label="Progress"><strong>78%</strong></td><td data-label="Status"><span class="status-badge progress">In Progress</span></td></tr>
+                                <tr><td data-label="Project">NovaTech Omnichannel</td><td data-label="Client">NovaTech</td><td data-label="Progress"><strong>100%</strong></td><td data-label="Status"><span class="status-badge completed">Completed</span></td></tr>
+                                <tr><td data-label="Project">MedLife Platform</td><td data-label="Client">MedLife</td><td data-label="Progress"><strong>64%</strong></td><td data-label="Status"><span class="status-badge progress">In Progress</span></td></tr>
+                                <tr><td data-label="Project">CloudMigrate</td><td data-label="Client">CloudMigrate</td><td data-label="Progress"><strong>35%</strong></td><td data-label="Status"><span class="status-badge pending">Pending</span></td></tr>
+                                <tr><td data-label="Project">RetailAI Suite</td><td data-label="Client">RetailAI</td><td data-label="Progress"><strong>52%</strong></td><td data-label="Status"><span class="status-badge progress">In Progress</span></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="table-card scroll-reveal">
+                        <h3>Recent Activities</h3>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <span class="activity-icon" style="background:rgba(0,212,170,0.1);color:#00D4AA;"><i class="uil uil-check-circle"></i></span>
+                                <div><strong>Project completed</strong><p>FinCore ERP delivered successfully</p><small>Today, 09:30</small></div>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon" style="background:rgba(108,99,255,0.1);color:#6C63FF;"><i class="uil uil-user-plus"></i></span>
+                                <div><strong>New client onboarded</strong><p>Vertex Analytics signed contract</p><small>Today, 11:15</small></div>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon" style="background:rgba(255,193,7,0.1);color:#FFC107;"><i class="uil uil-file-alt"></i></span>
+                                <div><strong>Report generated</strong><p>Q3 Financial Summary ready</p><small>Yesterday, 16:45</small></div>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon" style="background:rgba(0,212,170,0.1);color:#00D4AA;"><i class="uil uil-user-plus"></i></span>
+                                <div><strong>Team member joined</strong><p>Sarah Kim added to Engineering</p><small>Yesterday, 09:00</small></div>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon" style="background:rgba(108,99,255,0.1);color:#6C63FF;"><i class="uil uil-dollar-sign"></i></span>
+                                <div><strong>Payment received</strong><p>$24,500 from NovaTech</p><small>2 days ago</small></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-card scroll-reveal">
+                    <h3>Quick Actions</h3>
+                    <div class="quick-actions-grid">
+                        <a href="projects.html" class="quick-action"><i class="uil uil-briefcase"></i><span>New Project</span></a>
+                        <a href="clients.html" class="quick-action"><i class="uil uil-users-alt"></i><span>Add Client</span></a>
+                        <a href="reports.html" class="quick-action"><i class="uil uil-file-alt"></i><span>Generate Report</span></a>
+                        <a href="team.html" class="quick-action"><i class="uil uil-user-plus"></i><span>Invite Team</span></a>
+                    </div>
+                </div>
+
+                <div class="chart-card growth-banner scroll-reveal">
+                    <div class="growth-banner-text">
+                        <h3>Your Business Is Growing Steadily</h3>
+                        <p>Revenue up 32% compared to last quarter. Continue the momentum with Stackly's growth solutions.</p>
+                        <a href="business-overview.html" class="btn btn-primary btn-sm">View Business Overview</a>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=85" alt="Business professional planning growth">
+                </div>
+            </section>
+        </div>
+    </main>
+</div>
+
+<div class="modal-overlay" id="logoutModal">
+    <div class="modal">
+        <span class="modal-icon"><i class="uil uil-signout"></i></span>
+        <h3>Are you sure you want to logout?</h3>
+        <p>You will need to sign in again to access your dashboard.</p>
+        <div class="modal-buttons">
+            <button class="btn btn-danger" id="confirmLogout">Confirm</button>
+            <button class="btn btn-secondary" id="cancelLogout">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<script src="js/script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+    var c = document.getElementById('pieChart');
+    if (c && window.drawPieChart) {
+        drawPieChart('pieChart', [
+            {label: 'Completed', value: 45, color: '#00D4AA'},
+            {label: 'In Progress', value: 30, color: '#6C63FF'},
+            {label: 'Pending', value: 15, color: '#FFC107'},
+            {label: 'Cancelled', value: 10, color: '#FF6584'}
+        ]);
+    }
+});
+</script>
+</body>
+</html>

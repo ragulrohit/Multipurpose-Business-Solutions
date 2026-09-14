@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a237e"/>
+      <stop offset="100%" style="stop-color:#1565c0"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)"/>
+  <!-- Building -->
+  <rect x="120" y="60" width="160" height="200" rx="5" fill="#e8eaf6" opacity="0.15"/>
+  <!-- Windows grid -->
+  <rect x="135" y="80" width="20" height="15" rx="2" fill="#e8eaf6" opacity="0.25"/>
+  <rect x="165" y="80" width="20" height="15" rx="2" fill="#e8eaf6" opacity="0.2"/>
+  <rect x="195" y="80" width="20" height="15" rx="2" fill="#e8eaf6" opacity="0.25"/>
+  <rect x="225" y="80" width="20" height="15" rx="2" fill="#e8eaf6" opacity="0.2"/>
+  <rect x="255" y="80" width="20" height="15" rx="2" fill="#e8eaf6" opacity="0.15"/>
+  <rect x="135" y="110" width="20" height="15" rx="2" fill="#e8eaf6" opacity="0.2"/>
+  <rect x="165" y="110" width="20" height="15" rx="2" fill="#e8eaf6" opacity="0.25"/>
+  <rect x="195" y="110" width="20" height="15" rx="2" fill="#e8eaf6" opacity="0.2"/>
+  <rect x="225" y="110" width="20" height="15" rx="2" fill="#e8eaf6" opacity="0.25"/>
+  <rect x="255" y="110" width="20" height="15" rx="2" fill="#e8eaf6" opacity="0.2"/>
+  <rect x="135" y="140" width="20" height="15" rx="2" fill="#e8eaf6" opacity="0.25"/>
+  <rect x="165" y="140" width="20" height="15" rx="2" fill="#e8eaf6" opacity="0.2"/>
+  <rect x="195" y="140" width="20" height="15" rx="2" fill="#e8eaf6" opacity="0.25"/>
+  <rect x="225" y="140" width="20" height="15" rx="2" fill="#e8eaf6" opacity="0.2"/>
+  <rect x="255" y="140" width="20" height="15" rx="2" fill="#e8eaf6" opacity="0.25"/>
+  <!-- Door -->
+  <rect x="180" y="215" width="40" height="45" rx="3" fill="#e8eaf6" opacity="0.3"/>
+  <!-- Connection lines to sides -->
+  <line x1="40" y1="160" x2="120" y2="160" stroke="#e8eaf6" stroke-width="1.5" opacity="0.2" stroke-dasharray="5,5"/>
+  <line x1="280" y1="160" x2="360" y2="160" stroke="#e8eaf6" stroke-width="1.5" opacity="0.2" stroke-dasharray="5,5"/>
+  <!-- Side nodes -->
+  <circle cx="40" cy="160" r="12" fill="#e8eaf6" opacity="0.2"/>
+  <circle cx="360" cy="160" r="12" fill="#e8eaf6" opacity="0.2"/>
+  <!-- Ground -->
+  <rect x="0" y="260" width="400" height="40" fill="#e8eaf6" opacity="0.08"/>
+</svg>

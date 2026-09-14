@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff7043"/>
+      <stop offset="100%" style="stop-color:#ffab91"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)"/>
+  <!-- Quote marks -->
+  <text x="80" y="100" fill="#fbe9e7" font-size="60" font-family="Georgia" opacity="0.15">"</text>
+  <!-- Quote lines -->
+  <line x1="100" y1="120" x2="300" y2="120" stroke="#fbe9e7" stroke-width="1.5" opacity="0.12"/>
+  <line x1="100" y1="140" x2="260" y2="140" stroke="#fbe9e7" stroke-width="1.5" opacity="0.1"/>
+  <line x1="100" y1="160" x2="280" y2="160" stroke="#fbe9e7" stroke-width="1.5" opacity="0.1"/>
+  <!-- Person circle avatar -->
+  <circle cx="140" cy="220" r="28" fill="#fbe9e7" opacity="0.2"/>
+  <!-- Head -->
+  <circle cx="140" cy="210" r="14" fill="#fbe9e7" opacity="0.3"/>
+  <!-- Body -->
+  <ellipse cx="140" cy="245" rx="20" ry="15" fill="#fbe9e7" opacity="0.2"/>
+  <!-- Stars -->
+  <polygon points="195,205 198,213 207,213 200,218 202,226 195,222 188,226 190,218 183,213 192,213" fill="#fbe9e7" opacity="0.3"/>
+  <polygon points="215,205 218,213 227,213 220,218 222,226 215,222 208,226 210,218 203,213 212,213" fill="#fbe9e7" opacity="0.3"/>
+  <polygon points="235,205 238,213 247,213 240,218 242,226 235,222 228,226 230,218 223,213 232,213" fill="#fbe9e7" opacity="0.3"/>
+  <polygon points="255,205 258,213 267,213 260,218 262,226 255,222 248,226 250,218 243,213 252,213" fill="#fbe9e7" opacity="0.3"/>
+  <polygon points="275,205 278,213 287,213 280,218 282,226 275,222 268,226 270,218 263,213 272,213" fill="#fbe9e7" opacity="0.25"/>
+  <!-- Name placeholder -->
+  <rect x="190" y="240" width="100" height="8" rx="4" fill="#fbe9e7" opacity="0.12"/>
+  <rect x="210" y="255" width="60" height="6" rx="3" fill="#fbe9e7" opacity="0.08"/>
+</svg>

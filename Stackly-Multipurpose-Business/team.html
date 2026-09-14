@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly - Team</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="dashboard.html" class="navbar-logo">Stackly</a>
+        </div>
+        <div class="navbar-right">
+            <button class="notification-btn" title="Notifications">
+                <i class="fa-solid fa-bell"></i>
+                <span class="notification-badge">3</span>
+            </button>
+            <div class="navbar-user">
+                <div class="user-avatar">S</div>
+            </div>
+            <button class="logout-btn" onclick="document.getElementById('logoutModal').classList.add('active')">
+                <i class="fa-solid fa-right-from-bracket"></i> Logout
+            </button>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="dashboard.html" class="sidebar-logo">Stackly</a>
+        </div>
+        <p class="menu-label">MAIN MENU</p>
+        <nav class="sidebar-menu">
+            <a href="dashboard.html">
+                <span class="icon"><i class="fa-solid fa-gauge-high"></i></span> Dashboard
+            </a>
+            <a href="business-overview.html">
+                <span class="icon"><i class="fa-solid fa-chart-line"></i></span> Business Overview
+            </a>
+            <a href="analytics.html">
+                <span class="icon"><i class="fa-solid fa-chart-pie"></i></span> Analytics
+            </a>
+            <a href="projects.html">
+                <span class="icon"><i class="fa-solid fa-folder-open"></i></span> Projects
+            </a>
+            <a href="clients.html">
+                <span class="icon"><i class="fa-solid fa-users"></i></span> Clients
+            </a>
+            <a href="reports.html">
+                <span class="icon"><i class="fa-solid fa-file-lines"></i></span> Reports
+            </a>
+            <a href="team.html" class="active">
+                <span class="icon"><i class="fa-solid fa-people-group"></i></span> Team
+            </a>
+            <a href="settings.html">
+                <span class="icon"><i class="fa-solid fa-gear"></i></span> Settings
+            </a>
+        </nav>
+        <button class="sidebar-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open')">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </aside>
+
+    <!-- Dashboard Layout -->
+    <div class="dashboard-layout">
+        <main class="dashboard-main">
+
+            <!-- Page Header -->
+            <section class="dash-page-header">
+                <h1>Team Members</h1>
+                <button class="btn btn-primary"><i class="fa-solid fa-plus"></i> Add Member</button>
+            </section>
+
+            <!-- Filter Bar -->
+            <section class="filter-bar">
+                <input type="text" placeholder="Search team members...">
+                <select>
+                    <option value="all">All Departments</option>
+                    <option value="engineering">Engineering</option>
+                    <option value="marketing">Marketing</option>
+                    <option value="sales">Sales</option>
+                    <option value="operations">Operations</option>
+                    <option value="design">Design</option>
+                </select>
+            </section>
+
+            <!-- Stat Cards -->
+            <section class="dash-cards">
+                <div class="dash-card">
+                    <div class="card-top">
+                        <div class="card-icon" style="background: var(--gradient2);"><i class="fa-solid fa-people-group"></i></div>
+                        <span class="card-change up"><i class="fa-solid fa-arrow-up"></i> +4.2%</span>
+                    </div>
+                    <div class="card-value">24</div>
+                    <div class="card-label">Total Members</div>
+                </div>
+                <div class="dash-card">
+                    <div class="card-top">
+                        <div class="card-icon" style="background: var(--gradient1);"><i class="fa-solid fa-building"></i></div>
+                        <span class="card-change up"><i class="fa-solid fa-arrow-up"></i> +1</span>
+                    </div>
+                    <div class="card-value">6</div>
+                    <div class="card-label">Departments</div>
+                </div>
+                <div class="dash-card">
+                    <div class="card-top">
+                        <div class="card-icon" style="background: linear-gradient(135deg, #00C9A7, #00B4D8);"><i class="fa-solid fa-circle-check"></i></div>
+                        <span class="card-change up"><i class="fa-solid fa-arrow-up"></i> +3.8%</span>
+                    </div>
+                    <div class="card-value">22</div>
+                    <div class="card-label">Active</div>
+                </div>
+                <div class="dash-card">
+                    <div class="card-top">
+                        <div class="card-icon" style="background: var(--gradient3);"><i class="fa-solid fa-calendar-xmark"></i></div>
+                        <span class="card-change down"><i class="fa-solid fa-arrow-down"></i> -1</span>
+                    </div>
+                    <div class="card-value">2</div>
+                    <div class="card-label">On Leave</div>
+                </div>
+            </section>
+
+            <!-- Team Member Cards -->
+            <section class="page-card-grid">
+
+                <!-- Alex Morgan -->
+                <div class="dash-card team-card">
+                    <div class="team-avatar" style="background: var(--gradient1);">
+                        <div class="img-ph" style="background: linear-gradient(135deg, #6C3CE1, #FF6B35);"></div>
+                    </div>
+                    <h4>Alex Morgan</h4>
+                    <p class="position">CEO</p>
+                    <p class="team-meta">Executive</p>
+                    <p class="team-meta"><i class="fa-solid fa-envelope" style="margin-right:4px;"></i> alex@stackly.com</p>
+                    <span class="status-badge" style="background: rgba(0,201,167,0.1); color: var(--accent); margin-top:10px;">Active</span>
+                    <div style="display:flex; justify-content:center; gap:12px; margin-top:14px;">
+                        <a href="#" style="width:32px;height:32px;border-radius:8px;background:rgba(108,60,225,0.08);display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:0.85rem;transition:var(--transition);"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" style="width:32px;height:32px;border-radius:8px;background:rgba(108,60,225,0.08);display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:0.85rem;transition:var(--transition);"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" style="width:32px;height:32px;border-radius:8px;background:rgba(108,60,225,0.08);display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:0.85rem;transition:var(--transition);"><i class="fa-solid fa-globe"></i></a>
+                    </div>
+                </div>
+
+                <!-- Jessica Lee -->
+                <div class="dash-card team-card">
+                    <div class="team-avatar" style="background: var(--gradient2);">
+                        <div class="img-ph" style="background: linear-gradient(135deg, #00C9A7, #6C3CE1);"></div>
+                    </div>
+                    <h4>Jessica Lee</h4>
+                    <p class="position">CTO</p>
+                    <p class="team-meta">Engineering</p>
+                    <p class="team-meta"><i class="fa-solid fa-envelope" style="margin-right:4px;"></i> jessica@stackly.com</p>
+                    <span class="status-badge" style="background: rgba(0,201,167,0.1); color: var(--accent); margin-top:10px;">Active</span>
+                    <div style="display:flex; justify-content:center; gap:12px; margin-top:14px;">
+                        <a href="#" style="width:32px;height:32px;border-radius:8px;background:rgba(108,60,225,0.08);display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:0.85rem;transition:var(--transition);"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" style="width:32px;height:32px;border-radius:8px;background:rgba(108,60,225,0.08);display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:0.85rem;transition:var(--transition);"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" style="width:32px;height:32px;border-radius:8px;background:rgba(108,60,225,0.08);display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:0.85rem;transition:var(--transition);"><i class="fa-solid fa-globe"></i></a>
+                    </div>
+                </div>
+
+                <!-- David Kim -->
+                <div class="dash-card team-card">
+                    <div class="team-avatar" style="background: var(--gradient3);">
+                        <div class="img-ph" style="background: linear-gradient(135deg, #FF6B35, #FF4081);"></div>
+                    </div>
+                    <h4>David Kim</h4>
+                    <p class="position">VP Marketing</p>
+                    <p class="team-meta">Marketing</p>
+                    <p class="team-meta"><i class="fa-solid fa-envelope" style="margin-right:4px;"></i> david@stackly.com</p>
+                    <span class="status-badge" style="background: rgba(0,201,167,0.1); color: var(--accent); margin-top:10px;">Active</span>
+                    <div style="display:flex; justify-content:center; gap:12px; margin-top:14px;">
+                        <a href="#" style="width:32px;height:32px;border-radius:8px;background:rgba(108,60,225,0.08);display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:0.85rem;transition:var(--transition);"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" style="width:32px;height:32px;border-radius:8px;background:rgba(108,60,225,0.08);display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:0.85rem;transition:var(--transition);"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" style="width:32px;height:32px;border-radius:8px;background:rgba(108,60,225,0.08);display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:0.85rem;transition:var(--transition);"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Sophia Chen -->
+                <div class="dash-card team-card">
+                    <div class="team-avatar" style="background: var(--gradient4);">
+                        <div class="img-ph" style="background: linear-gradient(135deg, #6C3CE1, #00C9A7);"></div>
+                    </div>
+                    <h4>Sophia Chen</h4>
+                    <p class="position">Lead Designer</p>
+                    <p class="team-meta">Design</p>
+                    <p class="team-meta"><i class="fa-solid fa-envelope" style="margin-right:4px;"></i> sophia@stackly.com</p>
+                    <span class="status-badge" style="background: rgba(0,201,167,0.1); color: var(--accent); margin-top:10px;">Active</span>
+                    <div style="display:flex; justify-content:center; gap:12px; margin-top:14px;">
+                        <a href="#" style="width:32px;height:32px;border-radius:8px;background:rgba(108,60,225,0.08);display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:0.85rem;transition:var(--transition);"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" style="width:32px;height:32px;border-radius:8px;background:rgba(108,60,225,0.08);display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:0.85rem;transition:var(--transition);"><i class="fa-brands fa-dribbble"></i></a>
+                        <a href="#" style="width:32px;height:32px;border-radius:8px;background:rgba(108,60,225,0.08);display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:0.85rem;transition:var(--transition);"><i class="fa-brands fa-behance"></i></a>
+                    </div>
+                </div>
+
+                <!-- Ryan Patel -->
+                <div class="dash-card team-card">
+                    <div class="team-avatar" style="background: var(--gradient1);">
+                        <div class="img-ph" style="background: linear-gradient(135deg, #FF4081, #FF6B35);"></div>
+                    </div>
+                    <h4>Ryan Patel</h4>
+                    <p class="position">Sales Director</p>
+                    <p class="team-meta">Sales</p>
+                    <p class="team-meta"><i class="fa-solid fa-envelope" style="margin-right:4px;"></i> ryan@stackly.com</p>
+                    <span class="status-badge" style="background: rgba(0,201,167,0.1); color: var(--accent); margin-top:10px;">Active</span>
+                    <div style="display:flex; justify-content:center; gap:12px; margin-top:14px;">
+                        <a href="#" style="width:32px;height:32px;border-radius:8px;background:rgba(108,60,225,0.08);display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:0.85rem;transition:var(--transition);"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" style="width:32px;height:32px;border-radius:8px;background:rgba(108,60,225,0.08);display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:0.85rem;transition:var(--transition);"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" style="width:32px;height:32px;border-radius:8px;background:rgba(108,60,225,0.08);display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:0.85rem;transition:var(--transition);"><i class="fa-solid fa-globe"></i></a>
+                    </div>
+                </div>
+
+                <!-- Maria Garcia -->
+                <div class="dash-card team-card">
+                    <div class="team-avatar" style="background: var(--gradient3);">
+                        <div class="img-ph" style="background: linear-gradient(135deg, #00C9A7, #FFB020);"></div>
+                    </div>
+                    <h4>Maria Garcia</h4>
+                    <p class="position">Operations Manager</p>
+                    <p class="team-meta">Operations</p>
+                    <p class="team-meta"><i class="fa-solid fa-envelope" style="margin-right:4px;"></i> maria@stackly.com</p>
+                    <span class="status-badge" style="background: rgba(255,107,53,0.1); color: var(--secondary); margin-top:10px;">On Leave</span>
+                    <div style="display:flex; justify-content:center; gap:12px; margin-top:14px;">
+                        <a href="#" style="width:32px;height:32px;border-radius:8px;background:rgba(108,60,225,0.08);display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:0.85rem;transition:var(--transition);"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" style="width:32px;height:32px;border-radius:8px;background:rgba(108,60,225,0.08);display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:0.85rem;transition:var(--transition);"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" style="width:32px;height:32px;border-radius:8px;background:rgba(108,60,225,0.08);display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:0.85rem;transition:var(--transition);"><i class="fa-solid fa-globe"></i></a>
+                    </div>
+                </div>
+
+                <!-- James Wright -->
+                <div class="dash-card team-card">
+                    <div class="team-avatar" style="background: var(--gradient2);">
+                        <div class="img-ph" style="background: linear-gradient(135deg, #6C3CE1, #FF4081);"></div>
+                    </div>
+                    <h4>James Wright</h4>
+                    <p class="position">Senior Developer</p>
+                    <p class="team-meta">Engineering</p>
+                    <p class="team-meta"><i class="fa-solid fa-envelope" style="margin-right:4px;"></i> james@stackly.com</p>
+                    <span class="status-badge" style="background: rgba(0,201,167,0.1); color: var(--accent); margin-top:10px;">Active</span>
+                    <div style="display:flex; justify-content:center; gap:12px; margin-top:14px;">
+                        <a href="#" style="width:32px;height:32px;border-radius:8px;background:rgba(108,60,225,0.08);display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:0.85rem;transition:var(--transition);"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" style="width:32px;height:32px;border-radius:8px;background:rgba(108,60,225,0.08);display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:0.85rem;transition:var(--transition);"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" style="width:32px;height:32px;border-radius:8px;background:rgba(108,60,225,0.08);display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:0.85rem;transition:var(--transition);"><i class="fa-solid fa-globe"></i></a>
+                    </div>
+                </div>
+
+                <!-- Anna Taylor -->
+                <div class="dash-card team-card">
+                    <div class="team-avatar" style="background: var(--gradient4);">
+                        <div class="img-ph" style="background: linear-gradient(135deg, #FF6B35, #00C9A7);"></div>
+                    </div>
+                    <h4>Anna Taylor</h4>
+                    <p class="position">Data Analyst</p>
+                    <p class="team-meta">Operations</p>
+                    <p class="team-meta"><i class="fa-solid fa-envelope" style="margin-right:4px;"></i> anna@stackly.com</p>
+                    <span class="status-badge" style="background: rgba(255,64,129,0.1); color: var(--accent2); margin-top:10px;">On Leave</span>
+                    <div style="display:flex; justify-content:center; gap:12px; margin-top:14px;">
+                        <a href="#" style="width:32px;height:32px;border-radius:8px;background:rgba(108,60,225,0.08);display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:0.85rem;transition:var(--transition);"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" style="width:32px;height:32px;border-radius:8px;background:rgba(108,60,225,0.08);display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:0.85rem;transition:var(--transition);"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" style="width:32px;height:32px;border-radius:8px;background:rgba(108,60,225,0.08);display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:0.85rem;transition:var(--transition);"><i class="fa-solid fa-globe"></i></a>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Team Performance Section -->
+            <section style="margin-top:30px;">
+                <div class="dash-card" style="padding:32px;">
+                    <h3 style="font-size:1.1rem; font-weight:700; margin-bottom:24px;">Team Performance by Department</h3>
+
+                    <!-- Engineering -->
+                    <div style="margin-bottom:24px;">
+                        <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                            <span style="font-weight:600; font-size:0.9rem;">Engineering</span>
+                            <span style="font-weight:700; font-size:0.9rem; color:var(--accent);">92%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="fill" style="width:92%; background:var(--accent);"></div>
+                        </div>
+                    </div>
+
+                    <!-- Marketing -->
+                    <div style="margin-bottom:24px;">
+                        <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                            <span style="font-weight:600; font-size:0.9rem;">Marketing</span>
+                            <span style="font-weight:700; font-size:0.9rem; color:var(--primary);">85%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="fill" style="width:85%; background:var(--primary);"></div>
+                        </div>
+                    </div>
+
+                    <!-- Sales -->
+                    <div>
+                        <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                            <span style="font-weight:600; font-size:0.9rem;">Sales</span>
+                            <span style="font-weight:700; font-size:0.9rem; color:var(--secondary);">78%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="fill" style="width:78%; background:var(--secondary);"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Logout Modal -->
+    <div id="logoutModal" class="modal-overlay">
+        <div class="modal">
+            <h3>Confirm Logout</h3>
+            <p>Are you sure you want to logout?</p>
+            <div class="modal-btns">
+                <button class="btn-cancel" onclick="document.getElementById('logoutModal').classList.remove('active')">Cancel</button>
+                <button class="btn-confirm">Logout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

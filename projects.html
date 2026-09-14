@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Stackly</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+</head>
+<body>
+<div class="dashboard-layout">
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="dashboard.html" class="sidebar-logo"><img src="images/stackly-logo.webp" alt="Stackly"></a>
+            <p>Business Platform</p>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="dashboard.html" class="sidebar-item"><i class="uil uil-apps"></i><span>Dashboard</span></a></li>
+            <li><a href="business-overview.html" class="sidebar-item"><i class="uil uil-chart-line"></i><span>Business Overview</span></a></li>
+            <li><a href="analytics.html" class="sidebar-item"><i class="uil uil-analytics"></i><span>Analytics</span></a></li>
+            <li><a href="projects.html" class="sidebar-item active"><i class="uil uil-transaction"></i><span>Projects</span></a></li>
+            <li><a href="clients.html" class="sidebar-item"><i class="uil uil-users-alt"></i><span>Clients</span></a></li>
+            <li><a href="reports.html" class="sidebar-item"><i class="uil uil-file-alt"></i><span>Reports</span></a></li>
+            <li><a href="team.html" class="sidebar-item"><i class="uil uil-user-square"></i><span>Team</span></a></li>
+            <li><a href="settings.html" class="sidebar-item"><i class="uil uil-setting"></i><span>Settings</span></a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <button class="sidebar-logout logout-btn" type="button"><i class="uil uil-signout"></i><span>Logout</span></button>
+        </div>
+    </aside>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <main class="main-content">
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="mobile-sidebar-toggle" id="mobileSidebarToggle"><i class="uil uil-bars"></i></button>
+                <h1 id="pageTitle">Projects</h1>
+            </div>
+            <div class="topbar-right">
+                <div class="topbar-search"><i class="uil uil-search"></i><input type="text" placeholder="Search..."></div>
+                <div class="notification-wrapper" id="notificationWrapper">
+                    <button class="topbar-notification" id="notificationBell"><i class="uil uil-bell"></i><span class="notification-badge">3</span></button>
+                    <div class="notification-dropdown" id="notificationDropdown">
+                        <div class="notification-item"><i class="uil uil-check-circle"></i><div><strong>Project completed</strong><p>FinCore ERP delivered</p></div><small>2h ago</small></div>
+                        <div class="notification-item"><i class="uil uil-user-plus"></i><div><strong>New team member</strong><p>Sarah joined your team</p></div><small>5h ago</small></div>
+                        <div class="notification-item"><i class="uil uil-chart-line"></i><div><strong>Revenue milestone</strong><p>Q3 target hit</p></div><small>1d ago</small></div>
+                    </div>
+                </div>
+                <div class="topbar-user">
+                    <div class="topbar-avatar" id="topbarAvatar">S</div>
+                    <div class="topbar-user-name"><strong>Stackly User</strong><small>Administrator</small></div>
+                </div>
+                <button class="logout-btn" id="logoutBtn"><i class="uil uil-signout"></i></button>
+            </div>
+        </header>
+        <div class="dashboard-content">
+
+            <div class="page-header-row">
+                <div>
+                    <h2>Projects</h2>
+                    <p>Manage, track, and monitor all your active and completed projects.</p>
+                </div>
+                <div class="page-header-actions">
+                    <button class="btn btn-primary btn-small" id="openAddProject"><i class="uil uil-plus"></i> Add Project</button>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="stat-card">
+                    <div class="stat-icon blue"><i class="uil uil-briefcase"></i></div>
+                    <div class="stat-info">
+                        <h3>248</h3>
+                        <p>Total Projects</p>
+                    </div>
+                    <div class="stat-trend up"><i class="uil uil-arrow-up"></i> 8.3%</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon orange"><i class="uil uil-clock"></i></div>
+                    <div class="stat-info">
+                        <h3>32</h3>
+                        <p>In Progress</p>
+                    </div>
+                    <div class="stat-trend up"><i class="uil uil-arrow-up"></i> 5.1%</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon green"><i class="uil uil-check-circle"></i></div>
+                    <div class="stat-info">
+                        <h3>196</h3>
+                        <p>Completed</p>
+                    </div>
+                    <div class="stat-trend up"><i class="uil uil-arrow-up"></i> 12.4%</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon purple"><i class="uil uil-pause-circle"></i></div>
+                    <div class="stat-info">
+                        <h3>20</h3>
+                        <p>On Hold</p>
+                    </div>
+                    <div class="stat-trend down"><i class="uil uil-arrow-down"></i> 2.0%</div>
+                </div>
+            </div>
+
+            <div class="filter-pills">
+                <button class="filter-pill active selected">All</button>
+                <button class="filter-pill">In Progress</button>
+                <button class="filter-pill">Completed</button>
+                <button class="filter-pill">Pending</button>
+                <button class="filter-pill">On Hold</button>
+            </div>
+
+            <div class="table-card card">
+                <div class="card-header">
+                    <h3><i class="uil uil-transaction"></i> All Projects</h3>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Project</th>
+                                    <th>Client</th>
+                                    <th>Manager</th>
+                                    <th>Deadline</th>
+                                    <th>Progress</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="projectRow">
+                                <tr>
+                                    <td><strong>FinCore ERP</strong></td>
+                                    <td>FinCore</td>
+                                    <td>Alex Morgan</td>
+                                    <td><i class="uil uil-calendar-alt"></i> Dec 12 2026</td>
+                                    <td>
+                                        <div class="progress-bar"><div class="progress-fill" data-width="45" style="background: linear-gradient(90deg, #6C63FF, #00D4AA);"></div></div>
+                                        <span class="progress-text">45%</span>
+                                    </td>
+                                    <td><span class="status-badge progress">In Progress</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>NovaTech Omnichannel</strong></td>
+                                    <td>NovaTech Retail</td>
+                                    <td>Priya S.</td>
+                                    <td><i class="uil uil-calendar-alt"></i> Oct 30 2026</td>
+                                    <td>
+                                        <div class="progress-bar"><div class="progress-fill" data-width="100" style="background: linear-gradient(90deg, #00D4AA, #00e6b8);"></div></div>
+                                        <span class="progress-text">100%</span>
+                                    </td>
+                                    <td><span class="status-badge completed">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>MedLife Patient Platform</strong></td>
+                                    <td>MedLife</td>
+                                    <td>Marcus Lee</td>
+                                    <td><i class="uil uil-calendar-alt"></i> Jan 15 2027</td>
+                                    <td>
+                                        <div class="progress-bar"><div class="progress-fill" data-width="30" style="background: linear-gradient(90deg, #6C63FF, #8b85ff);"></div></div>
+                                        <span class="progress-text">30%</span>
+                                    </td>
+                                    <td><span class="status-badge progress">In Progress</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>CloudMigrate Suite</strong></td>
+                                    <td>Skyline</td>
+                                    <td>Elena R.</td>
+                                    <td><i class="uil uil-calendar-alt"></i> Nov 22 2026</td>
+                                    <td>
+                                        <div class="progress-bar"><div class="progress-fill" data-width="15" style="background: linear-gradient(90deg, #FFC107, #ffcd39);"></div></div>
+                                        <span class="progress-text">15%</span>
+                                    </td>
+                                    <td><span class="status-badge pending">Pending</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>RetailAI Suite</strong></td>
+                                    <td>Vertex Stores</td>
+                                    <td>James A.</td>
+                                    <td><i class="uil uil-calendar-alt"></i> Dec 05 2026</td>
+                                    <td>
+                                        <div class="progress-bar"><div class="progress-fill" data-width="60" style="background: linear-gradient(90deg, #6C63FF, #00D4AA);"></div></div>
+                                        <span class="progress-text">60%</span>
+                                    </td>
+                                    <td><span class="status-badge progress">In Progress</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>EduLearn LMS</strong></td>
+                                    <td>LearnFast</td>
+                                    <td>Sarah K.</td>
+                                    <td><i class="uil uil-calendar-alt"></i> Sep 28 2026</td>
+                                    <td>
+                                        <div class="progress-bar"><div class="progress-fill" data-width="100" style="background: linear-gradient(90deg, #00D4AA, #00e6b8);"></div></div>
+                                        <span class="progress-text">100%</span>
+                                    </td>
+                                    <td><span class="status-badge completed">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>HealthData Sync</strong></td>
+                                    <td>CarePlus</td>
+                                    <td>David C.</td>
+                                    <td><i class="uil uil-calendar-alt"></i> Feb 02 2027</td>
+                                    <td>
+                                        <div class="progress-bar"><div class="progress-fill" data-width="10" style="background: linear-gradient(90deg, #FFC107, #ffcd39);"></div></div>
+                                        <span class="progress-text">10%</span>
+                                    </td>
+                                    <td><span class="status-badge pending">Pending</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>SmartFactory OS</strong></td>
+                                    <td>MotoWorks</td>
+                                    <td>Amira H.</td>
+                                    <td><i class="uil uil-calendar-alt"></i> Jan 30 2027</td>
+                                    <td>
+                                        <div class="progress-bar"><div class="progress-fill" data-width="0" style="background: linear-gradient(90deg, #FF6584, #ff8da1);"></div></div>
+                                        <span class="progress-text">0%</span>
+                                    </td>
+                                    <td><span class="status-badge cancelled">On Hold</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="section-title"><i class="uil uil-rocket"></i> Featured Projects</h3>
+            <div class="dashboard-grid three-col">
+                <div class="project-card card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=85" alt="FinCore ERP technology team">
+                    </div>
+                    <div class="card-body">
+                        <h4>FinCore ERP Implementation</h4>
+                        <p class="project-client"><i class="uil uil-briefcase"></i> Client: FinCore</p>
+                        <p class="project-deadline"><i class="uil uil-calendar-alt"></i> Deadline: Dec 12 2026</p>
+                        <div class="project-progress">
+                            <div class="progress-label"><span>Progress</span><span>45%</span></div>
+                            <div class="progress-bar"><div class="progress-fill" data-width="45" style="background: linear-gradient(90deg, #6C63FF, #00D4AA);"></div></div>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-status"><span class="status-badge progress">In Progress</span></div>
+                            <div class="project-team">
+                                <div class="team-avatar" style="background:#6C63FF;">AM</div>
+                                <div class="team-avatar" style="background:#00D4AA;">PS</div>
+                                <div class="team-avatar" style="background:#FFC107;">ML</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=85" alt="NovaTech business team">
+                    </div>
+                    <div class="card-body">
+                        <h4>NovaTech Omnichannel</h4>
+                        <p class="project-client"><i class="uil uil-briefcase"></i> Client: NovaTech Retail</p>
+                        <p class="project-deadline"><i class="uil uil-calendar-alt"></i> Deadline: Oct 30 2026</p>
+                        <div class="project-progress">
+                            <div class="progress-label"><span>Progress</span><span>100%</span></div>
+                            <div class="progress-bar"><div class="progress-fill" data-width="100" style="background: linear-gradient(90deg, #00D4AA, #00e6b8);"></div></div>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-status"><span class="status-badge completed">Completed</span></div>
+                            <div class="project-team">
+                                <div class="team-avatar" style="background:#FF6584;">JA</div>
+                                <div class="team-avatar" style="background:#6C63FF;">SK</div>
+                                <div class="team-avatar" style="background:#00D4AA;">ER</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=85" alt="MedLife platform team planning growth">
+                    </div>
+                    <div class="card-body">
+                        <h4>MedLife Patient Platform</h4>
+                        <p class="project-client"><i class="uil uil-briefcase"></i> Client: MedLife</p>
+                        <p class="project-deadline"><i class="uil uil-calendar-alt"></i> Deadline: Jan 15 2027</p>
+                        <div class="project-progress">
+                            <div class="progress-label"><span>Progress</span><span>30%</span></div>
+                            <div class="progress-bar"><div class="progress-fill" data-width="30" style="background: linear-gradient(90deg, #6C63FF, #8b85ff);"></div></div>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-status"><span class="status-badge progress">In Progress</span></div>
+                            <div class="project-team">
+                                <div class="team-avatar" style="background:#FFC107;">ML</div>
+                                <div class="team-avatar" style="background:#FF6584;">DC</div>
+                                <div class="team-avatar" style="background:#6C63FF;">AH</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card banner-card">
+                <div class="banner-content">
+                    <div class="banner-text">
+                        <h3>Project Overview &amp; Analytics</h3>
+                        <p>Track project performance, timelines, and resource allocation with powerful analytics and reporting tools.</p>
+                        <a href="analytics.html" class="btn btn-primary"><i class="uil uil-analytics"></i> View Analytics</a>
+                    </div>
+                    <div class="banner-image">
+                        <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=85" alt="Project team reviewing progress">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</div>
+
+<div class="modal-overlay" id="logoutModal">
+    <div class="modal">
+        <span class="modal-icon"><i class="uil uil-signout"></i></span>
+        <h3>Are you sure you want to logout?</h3>
+        <p>You will need to sign in again to access your dashboard.</p>
+        <div class="modal-buttons">
+            <button class="btn btn-danger" id="confirmLogout">Confirm</button>
+            <button class="btn btn-secondary" id="cancelLogout">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<div class="modal-overlay" id="addProjectModal">
+    <div class="modal">
+        <h3>Add New Project</h3>
+        <p>Fill in the project details below.</p>
+        <form id="addProjectForm" class="modal-form">
+            <div class="form-group"><label for="projectName">Project Name</label><input type="text" id="projectName" placeholder="Project name"></div>
+            <div class="form-group"><label for="projectManager">Project Manager</label><input type="text" id="projectManager" placeholder="Manager name"></div>
+            <div class="form-group"><label for="projectDeadline">Deadline</label><input type="date" id="projectDeadline"></div>
+            <div class="form-group"><label for="projectStatus">Status</label>
+                <select id="projectStatus">
+                    <option value="In Progress">In Progress</option>
+                    <option value="Completed">Completed</option>
+                    <option value="Pending">Pending</option>
+                </select>
+            </div>
+            <div class="modal-buttons">
+                <button type="submit" class="btn btn-primary">Add Project</button>
+                <button type="button" class="btn btn-secondary" id="cancelAddProject">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

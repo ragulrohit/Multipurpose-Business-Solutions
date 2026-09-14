@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly - Analytics</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="dashboard.html" class="navbar-logo">Stackly</a>
+        </div>
+        <div class="navbar-right">
+            <button class="notification-btn" title="Notifications">
+                <i class="fa-solid fa-bell"></i>
+                <span class="notification-badge">3</span>
+            </button>
+            <div class="navbar-user">
+                <div class="user-avatar">S</div>
+            </div>
+            <button class="logout-btn" onclick="document.getElementById('logoutModal').classList.add('active')">
+                <i class="fa-solid fa-right-from-bracket"></i> Logout
+            </button>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="dashboard.html" class="sidebar-logo">Stackly</a>
+        </div>
+        <p class="menu-label">MAIN MENU</p>
+        <nav class="sidebar-menu">
+            <a href="dashboard.html">
+                <span class="icon"><i class="fa-solid fa-gauge-high"></i></span> Dashboard
+            </a>
+            <a href="business-overview.html">
+                <span class="icon"><i class="fa-solid fa-chart-line"></i></span> Business Overview
+            </a>
+            <a href="analytics.html" class="active">
+                <span class="icon"><i class="fa-solid fa-chart-pie"></i></span> Analytics
+            </a>
+            <a href="projects.html">
+                <span class="icon"><i class="fa-solid fa-folder-open"></i></span> Projects
+            </a>
+            <a href="clients.html">
+                <span class="icon"><i class="fa-solid fa-users"></i></span> Clients
+            </a>
+            <a href="reports.html">
+                <span class="icon"><i class="fa-solid fa-file-lines"></i></span> Reports
+            </a>
+            <a href="team.html">
+                <span class="icon"><i class="fa-solid fa-people-group"></i></span> Team
+            </a>
+            <a href="settings.html">
+                <span class="icon"><i class="fa-solid fa-gear"></i></span> Settings
+            </a>
+        </nav>
+        <button class="sidebar-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open')">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </aside>
+
+    <!-- Dashboard Layout -->
+    <div class="dashboard-layout">
+        <main class="dashboard-main">
+
+            <!-- Page Header -->
+            <section class="dash-page-header">
+                <h1>Analytics</h1>
+                <div class="filter-bar">
+                    <select>
+                        <option>Last 7 Days</option>
+                        <option selected>Last 30 Days</option>
+                        <option>Last 90 Days</option>
+                        <option>This Year</option>
+                    </select>
+                    <button class="btn btn-primary btn-sm">
+                        <i class="fa-solid fa-download"></i> Export
+                    </button>
+                </div>
+            </section>
+
+            <!-- Stat Cards -->
+            <section class="dash-cards">
+                <div class="dash-card">
+                    <div class="card-top">
+                        <div class="card-icon" style="background: linear-gradient(135deg, #6C3CE1, #FF6B35);">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                        <span class="card-change up"><i class="fa-solid fa-arrow-up"></i> +24%</span>
+                    </div>
+                    <div class="card-value">1.2M</div>
+                    <div class="card-label">Page Views</div>
+                </div>
+                <div class="dash-card">
+                    <div class="card-top">
+                        <div class="card-icon" style="background: linear-gradient(135deg, #00C9A7, #6C3CE1);">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <span class="card-change up"><i class="fa-solid fa-arrow-up"></i> +0.5%</span>
+                    </div>
+                    <div class="card-value">3.8%</div>
+                    <div class="card-label">Conversion Rate</div>
+                </div>
+                <div class="dash-card">
+                    <div class="card-top">
+                        <div class="card-icon" style="background: linear-gradient(135deg, #FF4081, #FF6B35);">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        </div>
+                        <span class="card-change down"><i class="fa-solid fa-arrow-down"></i> -3.2%</span>
+                    </div>
+                    <div class="card-value">42%</div>
+                    <div class="card-label">Bounce Rate</div>
+                </div>
+                <div class="dash-card">
+                    <div class="card-top">
+                        <div class="card-icon" style="background: linear-gradient(135deg, #6C3CE1, #00C9A7);">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <span class="card-change up"><i class="fa-solid fa-arrow-up"></i> +12%</span>
+                    </div>
+                    <div class="card-value">4.2m</div>
+                    <div class="card-label">Avg Session</div>
+                </div>
+            </section>
+
+            <!-- Charts Row -->
+            <section class="dash-row">
+                <div class="dash-panel">
+                    <h3><i class="fa-solid fa-chart-line" style="color:var(--primary);margin-right:8px;"></i> Traffic Overview</h3>
+                    <div id="trafficChart" style="min-height:220px;"></div>
+                </div>
+                <div class="dash-panel pie-chart-container">
+                    <h3><i class="fa-solid fa-chart-pie" style="color:var(--primary);margin-right:8px;"></i> Traffic Sources</h3>
+                    <div class="pie-chart" data-values='[40,28,18,14]' data-colors='["#6C3CE1","#00C9A7","#FF6B35","#FF4081"]'></div>
+                    <div class="pie-legend">
+                        <div class="pie-legend-item"><span class="dot" style="background:#6C3CE1"></span> Direct</div>
+                        <div class="pie-legend-item"><span class="dot" style="background:#00C9A7"></span> Organic Search</div>
+                        <div class="pie-legend-item"><span class="dot" style="background:#FF6B35"></span> Social Media</div>
+                        <div class="pie-legend-item"><span class="dot" style="background:#FF4081"></span> Referral</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Metrics Row: Top Pages, Top Referrals, Device Breakdown -->
+            <section class="dash-row" style="grid-template-columns: 1fr 1fr 1fr;">
+                <div class="dash-panel">
+                    <h3><i class="fa-solid fa-file-lines" style="color:var(--primary);margin-right:8px;"></i> Top Pages</h3>
+                    <div style="display:flex;flex-direction:column;gap:14px;">
+                        <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;border-bottom:1px solid var(--gray-lighter);">
+                            <span style="font-size:0.88rem;font-weight:600;">/home</span>
+                            <span style="font-size:0.85rem;color:var(--gray);">324,580 views</span>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;border-bottom:1px solid var(--gray-lighter);">
+                            <span style="font-size:0.88rem;font-weight:600;">/pricing</span>
+                            <span style="font-size:0.85rem;color:var(--gray);">198,320 views</span>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;border-bottom:1px solid var(--gray-lighter);">
+                            <span style="font-size:0.88rem;font-weight:600;">/features</span>
+                            <span style="font-size:0.85rem;color:var(--gray);">145,670 views</span>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;border-bottom:1px solid var(--gray-lighter);">
+                            <span style="font-size:0.88rem;font-weight:600;">/blog</span>
+                            <span style="font-size:0.85rem;color:var(--gray);">112,450 views</span>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;align-items:center;">
+                            <span style="font-size:0.88rem;font-weight:600;">/contact</span>
+                            <span style="font-size:0.85rem;color:var(--gray);">87,210 views</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="dash-panel">
+                    <h3><i class="fa-solid fa-link" style="color:var(--primary);margin-right:8px;"></i> Top Referrals</h3>
+                    <div style="display:flex;flex-direction:column;gap:14px;">
+                        <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;border-bottom:1px solid var(--gray-lighter);">
+                            <span style="font-size:0.88rem;font-weight:600;">google.com</span>
+                            <span style="font-size:0.85rem;color:var(--gray);">45,320 visits</span>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;border-bottom:1px solid var(--gray-lighter);">
+                            <span style="font-size:0.88rem;font-weight:600;">twitter.com</span>
+                            <span style="font-size:0.85rem;color:var(--gray);">23,180 visits</span>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;border-bottom:1px solid var(--gray-lighter);">
+                            <span style="font-size:0.88rem;font-weight:600;">linkedin.com</span>
+                            <span style="font-size:0.85rem;color:var(--gray);">18,640 visits</span>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;border-bottom:1px solid var(--gray-lighter);">
+                            <span style="font-size:0.88rem;font-weight:600;">facebook.com</span>
+                            <span style="font-size:0.85rem;color:var(--gray);">14,290 visits</span>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;align-items:center;">
+                            <span style="font-size:0.88rem;font-weight:600;">reddit.com</span>
+                            <span style="font-size:0.85rem;color:var(--gray);">9,870 visits</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="dash-panel">
+                    <h3><i class="fa-solid fa-mobile-screen-button" style="color:var(--primary);margin-right:8px;"></i> Device Breakdown</h3>
+                    <div style="display:flex;flex-direction:column;gap:24px;margin-top:8px;">
+                        <div>
+                            <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+                                <span style="font-size:0.88rem;font-weight:600;"><i class="fa-solid fa-desktop" style="color:var(--primary);margin-right:6px;"></i> Desktop</span>
+                                <span style="font-size:0.85rem;font-weight:700;color:var(--primary);">62%</span>
+                            </div>
+                            <div class="progress-bar"><div class="fill" style="width:62%;background:var(--gradient1);"></div></div>
+                        </div>
+                        <div>
+                            <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+                                <span style="font-size:0.88rem;font-weight:600;"><i class="fa-solid fa-mobile-screen" style="color:var(--accent);margin-right:6px;"></i> Mobile</span>
+                                <span style="font-size:0.85rem;font-weight:700;color:var(--accent);">31%</span>
+                            </div>
+                            <div class="progress-bar"><div class="fill" style="width:31%;background:var(--gradient2);"></div></div>
+                        </div>
+                        <div>
+                            <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+                                <span style="font-size:0.88rem;font-weight:600;"><i class="fa-solid fa-tablet-screen-button" style="color:var(--secondary);margin-right:6px;"></i> Tablet</span>
+                                <span style="font-size:0.85rem;font-weight:700;color:var(--secondary);">7%</span>
+                            </div>
+                            <div class="progress-bar"><div class="fill" style="width:7%;background:var(--gradient3);"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Performance Table -->
+            <section class="dash-panel" style="margin-bottom:30px;">
+                <h3><i class="fa-solid fa-table" style="color:var(--primary);margin-right:8px;"></i> Performance Data</h3>
+                <div style="overflow-x:auto;">
+                    <table class="dash-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Page Views</th>
+                                <th>Unique Visitors</th>
+                                <th>Bounce Rate</th>
+                                <th>Avg Session</th>
+                                <th>Conversions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Sep 10, 2026</td>
+                                <td>48,320</td>
+                                <td>32,150</td>
+                                <td>38.4%</td>
+                                <td>4m 35s</td>
+                                <td>1,836</td>
+                            </tr>
+                            <tr>
+                                <td>Sep 09, 2026</td>
+                                <td>45,180</td>
+                                <td>29,870</td>
+                                <td>41.2%</td>
+                                <td>4m 12s</td>
+                                <td>1,717</td>
+                            </tr>
+                            <tr>
+                                <td>Sep 08, 2026</td>
+                                <td>52,740</td>
+                                <td>35,420</td>
+                                <td>36.8%</td>
+                                <td>4m 48s</td>
+                                <td>2,004</td>
+                            </tr>
+                            <tr>
+                                <td>Sep 07, 2026</td>
+                                <td>39,960</td>
+                                <td>26,530</td>
+                                <td>44.5%</td>
+                                <td>3m 54s</td>
+                                <td>1,518</td>
+                            </tr>
+                            <tr>
+                                <td>Sep 06, 2026</td>
+                                <td>51,200</td>
+                                <td>34,180</td>
+                                <td>37.1%</td>
+                                <td>4m 42s</td>
+                                <td>1,946</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Logout Modal -->
+    <div id="logoutModal" class="modal-overlay">
+        <div class="modal">
+            <h3>Confirm Logout</h3>
+            <p>Are you sure you want to logout?</p>
+            <div class="modal-btns">
+                <button class="btn-cancel" onclick="document.getElementById('logoutModal').classList.remove('active')">Cancel</button>
+                <button class="btn-confirm">Logout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Traffic Line Chart
+        var labels = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+        var values = [42000, 51000, 38000, 55000, 48000, 62000, 45000];
+        drawLineChart(document.getElementById('trafficChart'), labels, values, '#6C3CE1');
+    });
+    </script>
+</body>
+</html>

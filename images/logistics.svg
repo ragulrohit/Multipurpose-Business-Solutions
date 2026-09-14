@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#5d4037"/>
+      <stop offset="100%" style="stop-color:#ff6f00"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)"/>
+  <!-- Truck -->
+  <rect x="80" y="140" width="160" height="60" rx="5" fill="#d7ccc8" opacity="0.2"/>
+  <rect x="200" y="120" width="60" height="80" rx="5" fill="#d7ccc8" opacity="0.25"/>
+  <!-- Wheels -->
+  <circle cx="120" cy="210" r="15" fill="#d7ccc8" opacity="0.2"/>
+  <circle cx="120" cy="210" r="8" fill="#d7ccc8" opacity="0.15"/>
+  <circle cx="180" cy="210" r="15" fill="#d7ccc8" opacity="0.2"/>
+  <circle cx="180" cy="210" r="8" fill="#d7ccc8" opacity="0.15"/>
+  <circle cx="240" cy="210" r="15" fill="#d7ccc8" opacity="0.2"/>
+  <circle cx="240" cy="210" r="8" fill="#d7ccc8" opacity="0.15"/>
+  <!-- Boxes on truck -->
+  <rect x="95" y="145" width="25" height="25" rx="2" fill="#d7ccc8" opacity="0.3"/>
+  <rect x="125" y="145" width="30" height="25" rx="2" fill="#d7ccc8" opacity="0.25"/>
+  <rect x="160" y="145" width="25" height="25" rx="2" fill="#d7ccc8" opacity="0.3"/>
+  <!-- Route/path -->
+  <path d="M50,100 Q100,60 150,100 Q200,140 250,80 Q300,30 350,70" stroke="#d7ccc8" stroke-width="2" fill="none" opacity="0.2" stroke-dasharray="6,4"/>
+  <!-- Location pins -->
+  <circle cx="50" cy="100" r="8" fill="#d7ccc8" opacity="0.3"/>
+  <circle cx="50" cy="100" r="3" fill="#d7ccc8" opacity="0.4"/>
+  <circle cx="350" cy="70" r="8" fill="#d7ccc8" opacity="0.3"/>
+  <circle cx="350" cy="70" r="3" fill="#d7ccc8" opacity="0.4"/>
+  <!-- Warehouse -->
+  <rect x="300" y="130" width="70" height="50" rx="3" fill="#d7ccc8" opacity="0.1"/>
+  <rect x="305" y="135" width="60" height="10" rx="2" fill="#d7ccc8" opacity="0.08"/>
+  <rect x="305" y="150" width="60" height="10" rx="2" fill="#d7ccc8" opacity="0.08"/>
+  <!-- Road -->
+  <rect x="0" y="220" width="400" height="30" fill="#d7ccc8" opacity="0.06"/>
+  <line x1="50" y1="235" x2="100" y2="235" stroke="#d7ccc8" stroke-width="2" opacity="0.1" stroke-dasharray="10,10"/>
+  <line x1="150" y1="235" x2="200" y2="235" stroke="#d7ccc8" stroke-width="2" opacity="0.1" stroke-dasharray="10,10"/>
+  <line x1="250" y1="235" x2="300" y2="235" stroke="#d7ccc8" stroke-width="2" opacity="0.1" stroke-dasharray="10,10"/>
+</svg>

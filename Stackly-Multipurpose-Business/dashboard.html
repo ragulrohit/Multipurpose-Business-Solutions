@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly - Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="dashboard.html" class="navbar-logo">Stackly</a>
+        </div>
+        <div class="navbar-right">
+            <button class="notification-btn" title="Notifications">
+                <i class="fa-solid fa-bell"></i>
+                <span class="notification-badge">3</span>
+            </button>
+            <div class="navbar-user">
+                <div class="user-avatar">S</div>
+            </div>
+            <button class="logout-btn" onclick="document.getElementById('logoutModal').classList.add('active')">
+                <i class="fa-solid fa-right-from-bracket"></i> Logout
+            </button>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="dashboard.html" class="sidebar-logo">Stackly</a>
+        </div>
+        <p class="menu-label">MAIN MENU</p>
+        <nav class="sidebar-menu">
+            <a href="dashboard.html" class="active">
+                <span class="icon"><i class="fa-solid fa-gauge-high"></i></span> Dashboard
+            </a>
+            <a href="business-overview.html">
+                <span class="icon"><i class="fa-solid fa-chart-line"></i></span> Business Overview
+            </a>
+            <a href="analytics.html">
+                <span class="icon"><i class="fa-solid fa-chart-pie"></i></span> Analytics
+            </a>
+            <a href="projects.html">
+                <span class="icon"><i class="fa-solid fa-folder-open"></i></span> Projects
+            </a>
+            <a href="clients.html">
+                <span class="icon"><i class="fa-solid fa-users"></i></span> Clients
+            </a>
+            <a href="reports.html">
+                <span class="icon"><i class="fa-solid fa-file-lines"></i></span> Reports
+            </a>
+            <a href="team.html">
+                <span class="icon"><i class="fa-solid fa-people-group"></i></span> Team
+            </a>
+            <a href="settings.html">
+                <span class="icon"><i class="fa-solid fa-gear"></i></span> Settings
+            </a>
+        </nav>
+        <button class="sidebar-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open')">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </aside>
+
+    <!-- Dashboard Layout -->
+    <div class="dashboard-layout">
+        <main class="dashboard-main">
+
+            <!-- Dashboard Header -->
+            <section class="dash-header">
+                <h1>Dashboard</h1>
+                <div class="user-info">
+                    <div class="user-avatar">S</div>
+                    <span class="user-name">Stackly Admin</span>
+                    <span class="user-email">admin@stackly.com</span>
+                </div>
+            </section>
+
+            <!-- Stat Cards -->
+            <section class="dash-cards">
+                <div class="stat-card">
+                    <div class="stat-card-icon"><i class="fa-solid fa-diagram-project"></i></div>
+                    <div class="stat-card-info">
+                        <h3>Total Projects</h3>
+                        <p class="stat-number" data-count="248">0</p>
+                    </div>
+                    <span class="stat-change positive"><i class="fa-solid fa-arrow-up"></i> +12.5%</span>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-icon"><i class="fa-solid fa-handshake"></i></div>
+                    <div class="stat-card-info">
+                        <h3>Active Clients</h3>
+                        <p class="stat-number" data-count="156">0</p>
+                    </div>
+                    <span class="stat-change positive"><i class="fa-solid fa-arrow-up"></i> +8.3%</span>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-icon"><i class="fa-solid fa-circle-check"></i></div>
+                    <div class="stat-card-info">
+                        <h3>Completed</h3>
+                        <p class="stat-number" data-count="189">0</p>
+                    </div>
+                    <span class="stat-change positive"><i class="fa-solid fa-arrow-up"></i> +15.2%</span>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                    <div class="stat-card-info">
+                        <h3>Business Growth</h3>
+                        <p class="stat-number" data-count="94" data-suffix="%">0%</p>
+                    </div>
+                    <span class="stat-change positive"><i class="fa-solid fa-arrow-up"></i> +5.7%</span>
+                </div>
+            </section>
+
+            <!-- Row: Recent Projects + Pie Chart -->
+            <section class="dash-row">
+                <div class="recent-projects">
+                    <h2>Recent Projects</h2>
+                    <table class="dash-table">
+                        <thead>
+                            <tr>
+                                <th>Project</th>
+                                <th>Client</th>
+                                <th>Status</th>
+                                <th>Progress</th>
+                                <th>Deadline</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>E-Commerce Redesign</td>
+                                <td>Acme Corp</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>75%</td>
+                                <td>Sep 30, 2026</td>
+                            </tr>
+                            <tr>
+                                <td>Mobile Banking App</td>
+                                <td>FinanceHub</td>
+                                <td><span class="status-badge status-progress">In Progress</span></td>
+                                <td>40%</td>
+                                <td>Oct 15, 2026</td>
+                            </tr>
+                            <tr>
+                                <td>Brand Identity</td>
+                                <td>NovaTech</td>
+                                <td><span class="status-badge status-completed">Completed</span></td>
+                                <td>100%</td>
+                                <td>Aug 20, 2026</td>
+                            </tr>
+                            <tr>
+                                <td>CRM Dashboard</td>
+                                <td>ClientPro</td>
+                                <td><span class="status-badge status-review">In Review</span></td>
+                                <td>90%</td>
+                                <td>Sep 12, 2026</td>
+                            </tr>
+                            <tr>
+                                <td>SEO Campaign</td>
+                                <td>GrowthMedia</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>55%</td>
+                                <td>Nov 01, 2026</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pie-chart-container">
+                    <h2>Project Distribution</h2>
+                    <div class="pie-chart" data-values='[45,25,20,10]' data-colors='["#00C9A7","#6C3CE1","#FF6B35","#FF4081"]'></div>
+                    <div class="pie-legend">
+                        <div class="legend-item"><span class="legend-dot" style="background:#00C9A7"></span> Web Development</div>
+                        <div class="legend-item"><span class="legend-dot" style="background:#6C3CE1"></span> Mobile Apps</div>
+                        <div class="legend-item"><span class="legend-dot" style="background:#FF6B35"></span> Branding</div>
+                        <div class="legend-item"><span class="legend-dot" style="background:#FF4081"></span> Marketing</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Row: Recent Activities + Quick Actions -->
+            <section class="dash-row">
+                <div class="recent-activities">
+                    <h2>Recent Activities</h2>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <span class="activity-dot" style="background:#00C9A7"></span>
+                            <span class="activity-text">New project "E-Commerce Redesign" was created</span>
+                            <span class="activity-time">2 hours ago</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-dot" style="background:#6C3CE1"></span>
+                            <span class="activity-text">Client "FinanceHub" was added to the system</span>
+                            <span class="activity-time">5 hours ago</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-dot" style="background:#FF6B35"></span>
+                            <span class="activity-text">Brand Identity project marked as completed</span>
+                            <span class="activity-time">1 day ago</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-dot" style="background:#FF4081"></span>
+                            <span class="activity-text">Monthly report for August was generated</span>
+                            <span class="activity-time">2 days ago</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-dot" style="background:#00C9A7"></span>
+                            <span class="activity-text">Team member "Jane Doe" joined the workspace</span>
+                            <span class="activity-time">3 days ago</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="quick-actions">
+                    <h2>Quick Actions</h2>
+                    <div class="actions-grid">
+                        <button class="action-btn">
+                            <i class="fa-solid fa-plus"></i>
+                            New Project
+                        </button>
+                        <button class="action-btn">
+                            <i class="fa-solid fa-user-plus"></i>
+                            Add Client
+                        </button>
+                        <button class="action-btn">
+                            <i class="fa-solid fa-file-export"></i>
+                            Generate Report
+                        </button>
+                        <button class="action-btn">
+                            <i class="fa-solid fa-chart-column"></i>
+                            View Analytics
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Logout Modal -->
+    <div id="logoutModal" class="modal-overlay">
+        <div class="modal">
+            <h3>Confirm Logout</h3>
+            <p>Are you sure you want to logout?</p>
+            <div class="modal-btns">
+                <button class="btn-cancel" onclick="document.getElementById('logoutModal').classList.remove('active')">Cancel</button>
+                <button class="btn-confirm">Logout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

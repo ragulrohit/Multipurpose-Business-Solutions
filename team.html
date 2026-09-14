@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team | Stackly</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <style>
+        /* ============================================
+           Stackly - Team page supplemental styles
+           ============================================ */
+        .topbar-left h1 { font-size: 1.25rem; font-weight: 700; color: var(--dark); margin: 0; }
+
+        .page-header { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-bottom: 28px; }
+        .page-header-left h2 { font-size: 1.65rem; color: var(--dark); margin-bottom: 6px; }
+        .page-header-left p { color: var(--gray-600); font-size: 0.92rem; margin-bottom: 0; }
+        .page-header-right { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+
+        .section-title { font-size: 1.2rem; color: var(--dark); margin: 6px 0 20px; font-weight: 700; }
+
+        /* Stat icons */
+        .stat-card .stat-icon.blue { background: rgba(108, 99, 255, 0.12); color: #6C63FF; }
+        .stat-card .stat-icon.green { background: rgba(0, 212, 170, 0.12); color: #00D4AA; }
+        .stat-card .stat-icon.orange { background: rgba(255, 101, 132, 0.12); color: #FF6584; }
+        .stat-card .stat-icon.purple { background: rgba(155, 89, 182, 0.12); color: #9b59b6; }
+
+        /* Team cards */
+        .team-card { position: relative; }
+        .team-card .card-image { position: relative; }
+        .team-card .team-info .role { color: #6C63FF; }
+        .team-department { display: block; color: var(--gray-500); font-size: 0.8rem; margin-top: 6px; }
+        .team-department i { margin-right: 5px; color: #6C63FF; }
+        .team-email { display: inline-flex; align-items: center; gap: 6px; color: var(--gray-600); font-size: 0.82rem; margin-top: 8px; }
+        .team-email i { color: #6C63FF; font-size: 0.85rem; }
+        .team-card .status-badge { margin-top: 12px; }
+
+        /* Status badges */
+        .status-badge.active { background: rgba(0, 184, 148, 0.12); color: var(--success); }
+        .status-badge.active::before { background: var(--success); }
+        .status-badge.available { background: rgba(108, 99, 255, 0.12); color: var(--primary); }
+        .status-badge.available::before { background: var(--primary); }
+        .status-badge.onleave { background: rgba(255, 195, 18, 0.15); color: #d4a017; }
+        .status-badge.onleave::before { background: var(--warning); }
+        .status-badge.ontrack { background: rgba(0, 184, 148, 0.12); color: var(--success); }
+        .status-badge.ontrack::before { background: var(--success); }
+        .status-badge.review { background: rgba(255, 195, 18, 0.15); color: #d4a017; }
+        .status-badge.review::before { background: var(--warning); }
+
+        /* Two column grid */
+        .two-column-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 24px; margin-bottom: 8px; align-items: start; }
+        @media (max-width: 900px) { .two-column-grid { grid-template-columns: 1fr; } }
+
+        /* Table / chart card titles */
+        .table-card .card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+        .table-card .card-header h3, .table-card > h3 { font-size: 1.05rem; color: var(--dark); margin-bottom: 0; }
+        .table-card .card-header h3 i, .chart-card > h3 i { margin-right: 8px; color: #6C63FF; }
+        .chart-card > h3 { font-size: 1.05rem; color: var(--dark); margin-bottom: 22px; }
+
+        .table-progress { width: 90px; height: 6px; background: var(--gray-200); border-radius: var(--radius-full); overflow: hidden; }
+        .table-progress .progress-fill { height: 100%; border-radius: var(--radius-full); }
+
+        /* Progress items */
+        .progress-item { margin-bottom: 22px; }
+        .progress-item:last-child { margin-bottom: 0; }
+
+        /* Spotlight banner */
+        .spotlight-banner { display: flex; align-items: center; gap: 36px; background: var(--gradient-dark); border-radius: var(--radius-xl); padding: 38px 42px; color: #fff; position: relative; overflow: hidden; margin-bottom: 8px; }
+        .spotlight-banner::before { content: ''; position: absolute; top: -60%; right: -5%; width: 320px; height: 320px; background: radial-gradient(circle, rgba(108, 99, 255, 0.35) 0%, transparent 70%); border-radius: 50%; }
+        .spotlight-banner img { width: 230px; flex-shrink: 0; position: relative; }
+        .spotlight-banner-content { position: relative; z-index: 1; }
+        .spotlight-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFC312; font-size: 0.78rem; font-weight: 600; padding: 6px 14px; border-radius: var(--radius-full); margin-bottom: 14px; }
+        .spotlight-badge i { font-size: 0.9rem; }
+        .spotlight-banner h3 { color: #fff; font-size: 1.35rem; font-weight: 800; margin-bottom: 6px; }
+        .spotlight-banner p { color: rgba(255, 255, 255, 0.78); font-size: 0.95rem; margin-bottom: 22px; max-width: 520px; }
+        @media (max-width: 640px) { .spotlight-banner { flex-direction: column; text-align: center; padding: 30px 24px; } .spotlight-banner img { width: 160px; } }
+
+        /* Shell extras */
+        .sidebar-user { display: flex; align-items: center; gap: 12px; }
+        .sidebar-user-info strong { display: block; color: #fff; font-size: 0.85rem; line-height: 1.4; }
+        .sidebar-user-info small { color: rgba(255, 255, 255, 0.55); font-size: 0.75rem; }
+
+        .topbar-user { display: flex; align-items: center; gap: 12px; }
+        .topbar-user-name { display: flex; flex-direction: column; line-height: 1.35; }
+        .topbar-user-name strong { font-size: 0.88rem; color: var(--dark); }
+        .topbar-user-name small { font-size: 0.74rem; color: var(--gray-500); }
+        @media (max-width: 768px) { .topbar-user-name { display: none; } }
+
+        .topbar-notification, .logout-btn { position: relative; width: 42px; height: 42px; border-radius: 50%; background: var(--light); display: inline-flex; align-items: center; justify-content: center; color: var(--gray-700); font-size: 1.1rem; transition: all var(--transition-fast); cursor: pointer; border: none; flex-shrink: 0; }
+        .topbar-notification:hover, .logout-btn:hover { background: var(--primary); color: #fff; }
+
+        .notification-wrapper { position: relative; }
+        .notification-dropdown { position: absolute; right: 0; top: calc(100% + 14px); width: 320px; background: #fff; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); border: 1px solid var(--gray-200); opacity: 0; visibility: hidden; transform: translateY(10px); transition: all var(--transition-base); z-index: var(--z-dropdown); }
+        .notification-dropdown.active { opacity: 1; visibility: visible; transform: translateY(0); }
+        .notification-item { display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px; border-bottom: 1px solid var(--gray-100); }
+        .notification-item:last-child { border-bottom: none; }
+        .notification-item > i { margin-top: 4px; font-size: 1rem; color: #6C63FF; width: 20px; text-align: center; flex-shrink: 0; }
+        .notification-item > i.uil-user-plus { color: #00D4AA; }
+        .notification-item > i.uil-chart-line { color: #FF6584; }
+        .notification-item strong { display: block; color: var(--dark); font-size: 0.85rem; }
+        .notification-item p { color: var(--gray-600); font-size: 0.78rem; margin: 2px 0 0; }
+        .notification-item small { color: var(--gray-400); font-size: 0.72rem; white-space: nowrap; margin-left: auto; }
+
+        /* Logout modal */
+        .modal-icon { width: 64px; height: 64px; border-radius: 50%; background: rgba(255, 101, 132, 0.12); color: #FF6584; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 18px; }
+        .modal h3 { font-size: 1.2rem; color: var(--dark); margin-bottom: 8px; text-align: center; }
+        .modal p { text-align: center; }
+        .modal-buttons { justify-content: center; }
+    </style>
+</head>
+<body>
+<div class="dashboard-layout">
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="dashboard.html" class="sidebar-logo"><img src="images/stackly-logo.webp" alt="Stackly"></a>
+            <p>Business Platform</p>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="dashboard.html" class="sidebar-item"><i class="uil uil-apps"></i><span>Dashboard</span></a></li>
+            <li><a href="business-overview.html" class="sidebar-item"><i class="uil uil-chart-line"></i><span>Business Overview</span></a></li>
+            <li><a href="analytics.html" class="sidebar-item"><i class="uil uil-analytics"></i><span>Analytics</span></a></li>
+            <li><a href="projects.html" class="sidebar-item"><i class="uil uil-transaction"></i><span>Projects</span></a></li>
+            <li><a href="clients.html" class="sidebar-item"><i class="uil uil-users-alt"></i><span>Clients</span></a></li>
+            <li><a href="reports.html" class="sidebar-item"><i class="uil uil-file-alt"></i><span>Reports</span></a></li>
+            <li><a href="team.html" class="sidebar-item active"><i class="uil uil-user-square"></i><span>Team</span></a></li>
+            <li><a href="settings.html" class="sidebar-item"><i class="uil uil-setting"></i><span>Settings</span></a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <button class="sidebar-logout logout-btn" type="button">
+                <i class="uil uil-signout"></i>
+                <span>Logout</span>
+            </button>
+        </div>
+    </aside>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <main class="main-content">
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="mobile-sidebar-toggle" id="mobileSidebarToggle"><i class="uil uil-bars"></i></button>
+                <h1 id="pageTitle">Team</h1>
+            </div>
+            <div class="topbar-right">
+                <div class="topbar-search"><i class="uil uil-search"></i><input type="text" placeholder="Search..."></div>
+                <div class="notification-wrapper" id="notificationWrapper">
+                    <button class="topbar-notification" id="notificationBell"><i class="uil uil-bell"></i><span class="notification-badge">3</span></button>
+                    <div class="notification-dropdown" id="notificationDropdown">
+                        <div class="notification-item"><i class="uil uil-check-circle"></i><div><strong>Project completed</strong><p>FinCore ERP delivered</p></div><small>2h ago</small></div>
+                        <div class="notification-item"><i class="uil uil-user-plus"></i><div><strong>New team member</strong><p>Sarah joined your team</p></div><small>5h ago</small></div>
+                        <div class="notification-item"><i class="uil uil-chart-line"></i><div><strong>Revenue milestone</strong><p>Q3 target hit</p></div><small>1d ago</small></div>
+                    </div>
+                </div>
+                <div class="topbar-user">
+                    <div class="topbar-avatar" id="topbarAvatar">S</div>
+                    <div class="topbar-user-name"><strong>Stackly User</strong><small>Administrator</small></div>
+                </div>
+                <button class="logout-btn" id="logoutBtn"><i class="uil uil-signout"></i></button>
+            </div>
+        </header>
+        <div class="dashboard-content team-page">
+
+            <!-- Page Header -->
+            <div class="page-header">
+                <div class="page-header-left">
+                    <h2>Our Team</h2>
+                    <p>Meet the people who drive Stackly's success</p>
+                </div>
+            </div>
+
+            <!-- Team Stats -->
+            <div class="dashboard-grid">
+                <div class="stat-card scroll-reveal">
+                    <div class="stat-icon blue"><i class="uil uil-users-alt"></i></div>
+                    <div class="stat-info">
+                        <h3>65</h3>
+                        <p>Total Members</p>
+                    </div>
+                </div>
+                <div class="stat-card scroll-reveal">
+                    <div class="stat-icon green"><i class="uil uil-building"></i></div>
+                    <div class="stat-info">
+                        <h3>8</h3>
+                        <p>Departments</p>
+                    </div>
+                </div>
+                <div class="stat-card scroll-reveal">
+                    <div class="stat-icon orange"><i class="uil uil-briefcase"></i></div>
+                    <div class="stat-info">
+                        <h3>96</h3>
+                        <p>Active Projects</p>
+                    </div>
+                </div>
+                <div class="stat-card scroll-reveal">
+                    <div class="stat-icon purple"><i class="uil uil-trophy"></i></div>
+                    <div class="stat-info">
+                        <h3>91%</h3>
+                        <p>Employee Satisfaction</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Members -->
+            <h3 class="section-title">Team Members</h3>
+            <div class="team-grid">
+
+                <!-- James Anderson -->
+                <article class="team-card scroll-reveal">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=85" alt="James Anderson">
+                        <div class="team-overlay">
+                            <div class="team-social">
+                                <a href="#" aria-label="LinkedIn"><i class="uil uil-linkedin-alt"></i></a>
+                                <a href="#" aria-label="Twitter"><i class="uil uil-twitter-alt"></i></a>
+                                <a href="#" aria-label="Email"><i class="uil uil-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h4>James Anderson</h4>
+                        <p class="role">Founder &amp; CEO</p>
+                        <small class="team-department"><i class="uil uil-building"></i> Executive</small>
+                        <div class="team-email"><i class="uil uil-envelope"></i> james@stackly.com</div>
+                        <span class="status-badge active">Active</span>
+                    </div>
+                </article>
+
+                <!-- Priya Sharma -->
+                <article class="team-card scroll-reveal">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=85" alt="Priya Sharma">
+                        <div class="team-overlay">
+                            <div class="team-social">
+                                <a href="#" aria-label="LinkedIn"><i class="uil uil-linkedin-alt"></i></a>
+                                <a href="#" aria-label="Twitter"><i class="uil uil-twitter-alt"></i></a>
+                                <a href="#" aria-label="Email"><i class="uil uil-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h4>Priya Sharma</h4>
+                        <p class="role">Chief Operations Officer</p>
+                        <small class="team-department"><i class="uil uil-building"></i> Operations</small>
+                        <div class="team-email"><i class="uil uil-envelope"></i> priya@stackly.com</div>
+                        <span class="status-badge active">Active</span>
+                    </div>
+                </article>
+
+                <!-- Marcus Lee -->
+                <article class="team-card scroll-reveal">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=85" alt="Marcus Lee">
+                        <div class="team-overlay">
+                            <div class="team-social">
+                                <a href="#" aria-label="LinkedIn"><i class="uil uil-linkedin-alt"></i></a>
+                                <a href="#" aria-label="Twitter"><i class="uil uil-twitter-alt"></i></a>
+                                <a href="#" aria-label="Email"><i class="uil uil-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h4>Marcus Lee</h4>
+                        <p class="role">Head of Technology</p>
+                        <small class="team-department"><i class="uil uil-building"></i> Technology</small>
+                        <div class="team-email"><i class="uil uil-envelope"></i> marcus@stackly.com</div>
+                        <span class="status-badge available">Available</span>
+                    </div>
+                </article>
+
+                <!-- Elena Rodriguez -->
+                <article class="team-card scroll-reveal">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=85" alt="Elena Rodriguez">
+                        <div class="team-overlay">
+                            <div class="team-social">
+                                <a href="#" aria-label="LinkedIn"><i class="uil uil-linkedin-alt"></i></a>
+                                <a href="#" aria-label="Twitter"><i class="uil uil-twitter-alt"></i></a>
+                                <a href="#" aria-label="Email"><i class="uil uil-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h4>Elena Rodriguez</h4>
+                        <p class="role">Head of Strategy</p>
+                        <small class="team-department"><i class="uil uil-building"></i> Strategy</small>
+                        <div class="team-email"><i class="uil uil-envelope"></i> elena@stackly.com</div>
+                        <span class="status-badge active">Active</span>
+                    </div>
+                </article>
+
+                <!-- Daniel Kim -->
+                <article class="team-card scroll-reveal">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=85" alt="Daniel Kim">
+                        <div class="team-overlay">
+                            <div class="team-social">
+                                <a href="#" aria-label="LinkedIn"><i class="uil uil-linkedin-alt"></i></a>
+                                <a href="#" aria-label="Twitter"><i class="uil uil-twitter-alt"></i></a>
+                                <a href="#" aria-label="Email"><i class="uil uil-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h4>Daniel Kim</h4>
+                        <p class="role">Senior Data Scientist</p>
+                        <small class="team-department"><i class="uil uil-building"></i> Data &amp; Analytics</small>
+                        <div class="team-email"><i class="uil uil-envelope"></i> daniel@stackly.com</div>
+                        <span class="status-badge available">Available</span>
+                    </div>
+                </article>
+
+                <!-- Sofia Martinez -->
+                <article class="team-card scroll-reveal">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=600&q=85" alt="Sofia Martinez">
+                        <div class="team-overlay">
+                            <div class="team-social">
+                                <a href="#" aria-label="LinkedIn"><i class="uil uil-linkedin-alt"></i></a>
+                                <a href="#" aria-label="Twitter"><i class="uil uil-twitter-alt"></i></a>
+                                <a href="#" aria-label="Email"><i class="uil uil-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h4>Sofia Martinez</h4>
+                        <p class="role">Marketing Director</p>
+                        <small class="team-department"><i class="uil uil-building"></i> Marketing</small>
+                        <div class="team-email"><i class="uil uil-envelope"></i> sofia@stackly.com</div>
+                        <span class="status-badge onleave">On Leave</span>
+                    </div>
+                </article>
+
+                <!-- Olivia Brown -->
+                <article class="team-card scroll-reveal">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=85" alt="Olivia Brown">
+                        <div class="team-overlay">
+                            <div class="team-social">
+                                <a href="#" aria-label="LinkedIn"><i class="uil uil-linkedin-alt"></i></a>
+                                <a href="#" aria-label="Twitter"><i class="uil uil-twitter-alt"></i></a>
+                                <a href="#" aria-label="Email"><i class="uil uil-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h4>Olivia Brown</h4>
+                        <p class="role">People Operations Lead</p>
+                        <small class="team-department"><i class="uil uil-building"></i> People &amp; Culture</small>
+                        <div class="team-email"><i class="uil uil-envelope"></i> olivia@stackly.com</div>
+                        <span class="status-badge active">Active</span>
+                    </div>
+                </article>
+
+                <!-- Arjun Patel -->
+                <article class="team-card scroll-reveal">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=600&q=85" alt="Arjun Patel">
+                        <div class="team-overlay">
+                            <div class="team-social">
+                                <a href="#" aria-label="LinkedIn"><i class="uil uil-linkedin-alt"></i></a>
+                                <a href="#" aria-label="Twitter"><i class="uil uil-twitter-alt"></i></a>
+                                <a href="#" aria-label="Email"><i class="uil uil-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h4>Arjun Patel</h4>
+                        <p class="role">Cloud Solutions Architect</p>
+                        <small class="team-department"><i class="uil uil-building"></i> Engineering</small>
+                        <div class="team-email"><i class="uil uil-envelope"></i> arjun@stackly.com</div>
+                        <span class="status-badge available">Available</span>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Department Performance + Team Productivity -->
+            <div class="two-column-grid">
+
+                <div class="table-card scroll-reveal">
+                    <div class="card-header">
+                        <h3><i class="uil uil-chart-bar"></i> Department Performance</h3>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Department</th>
+                                <th>Members</th>
+                                <th>Workload</th>
+                                <th>Output</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Sales</strong></td>
+                                <td>14</td>
+                                <td>92%</td>
+                                <td><div class="table-progress"><div class="progress-fill" style="width: 92%; background: linear-gradient(90deg, #6C63FF, #00D4AA);"></div></div></td>
+                                <td><span class="status-badge ontrack">On Track</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Engineering</strong></td>
+                                <td>18</td>
+                                <td>84%</td>
+                                <td><div class="table-progress"><div class="progress-fill" style="width: 84%; background: linear-gradient(90deg, #00D4AA, #6C63FF);"></div></div></td>
+                                <td><span class="status-badge ontrack">On Track</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Marketing</strong></td>
+                                <td>9</td>
+                                <td>78%</td>
+                                <td><div class="table-progress"><div class="progress-fill" style="width: 78%; background: linear-gradient(90deg, #FFC312, #FF6584);"></div></div></td>
+                                <td><span class="status-badge review">Review</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Data</strong></td>
+                                <td>8</td>
+                                <td>88%</td>
+                                <td><div class="table-progress"><div class="progress-fill" style="width: 88%; background: linear-gradient(90deg, #9b59b6, #6C63FF);"></div></div></td>
+                                <td><span class="status-badge ontrack">On Track</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Support</strong></td>
+                                <td>16</td>
+                                <td>71%</td>
+                                <td><div class="table-progress"><div class="progress-fill" style="width: 71%; background: linear-gradient(90deg, #FF6584, #FFC312);"></div></div></td>
+                                <td><span class="status-badge review">Review</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="chart-card scroll-reveal">
+                    <h3><i class="uil uil-signal"></i> Team Productivity</h3>
+                    <div class="progress-item">
+                        <div class="progress-label"><span>Product Development</span><span>88%</span></div>
+                        <div class="progress-bar"><div class="progress-fill" data-width="88" style="width: 88%; background: linear-gradient(135deg, #6C63FF, #9C66FF);"></div></div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-label"><span>Client Delivery</span><span>82%</span></div>
+                        <div class="progress-bar"><div class="progress-fill" data-width="82" style="width: 82%; background: linear-gradient(135deg, #00D4AA, #6C63FF);"></div></div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-label"><span>Research &amp; Innovation</span><span>74%</span></div>
+                        <div class="progress-bar"><div class="progress-fill" data-width="74" style="width: 74%; background: linear-gradient(135deg, #FF6584, #FFC107);"></div></div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-label"><span>Customer Support</span><span>79%</span></div>
+                        <div class="progress-bar"><div class="progress-fill" data-width="79" style="width: 79%; background: linear-gradient(135deg, #00D4AA, #FF6584);"></div></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Team Spotlight -->
+            <div class="spotlight-banner scroll-reveal">
+                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=85" alt="Team planning business growth">
+                <div class="spotlight-banner-content">
+                    <span class="spotlight-badge"><i class="uil uil-award"></i> Member of the Month</span>
+                    <h3>Priya Sharma</h3>
+                    <p>Recognized for leading the FinCore delivery and driving outstanding team results this quarter.</p>
+                    <a href="reports.html" class="btn btn-primary btn-sm"><i class="uil uil-file-alt"></i> View Reports</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</div>
+
+<!-- Logout Modal -->
+<div class="modal-overlay" id="logoutModal">
+    <div class="modal">
+        <span class="modal-icon"><i class="uil uil-signout"></i></span>
+        <h3>Are you sure you want to logout?</h3>
+        <p>You will need to sign in again to access your dashboard.</p>
+        <div class="modal-buttons">
+            <button class="btn btn-danger" id="confirmLogout">Confirm</button>
+            <button class="btn btn-secondary" id="cancelLogout">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var sidebar = document.getElementById('sidebar');
+    var overlay = document.getElementById('sidebarOverlay');
+    var mobileToggle = document.getElementById('mobileSidebarToggle');
+
+    if (mobileToggle && sidebar && overlay) {
+        mobileToggle.addEventListener('click', function () {
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        });
+        overlay.addEventListener('click', function () {
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+    }
+
+    var bell = document.getElementById('notificationBell');
+    var dropdown = document.getElementById('notificationDropdown');
+    if (bell && dropdown) {
+        bell.addEventListener('click', function (e) {
+            e.stopPropagation();
+            dropdown.classList.toggle('active');
+        });
+        document.addEventListener('click', function (e) {
+            if (dropdown && !dropdown.contains(e.target) && e.target !== bell) {
+                dropdown.classList.remove('active');
+            }
+        });
+    }
+
+    var logoutBtn = document.getElementById('logoutBtn');
+    var logoutModal = document.getElementById('logoutModal');
+    var confirmLogout = document.getElementById('confirmLogout');
+    var cancelLogout = document.getElementById('cancelLogout');
+    if (logoutBtn && logoutModal) {
+        logoutBtn.addEventListener('click', function () {
+            logoutModal.classList.add('active');
+        });
+        if (confirmLogout) {
+            confirmLogout.addEventListener('click', function () {
+                logoutModal.classList.remove('active');
+                window.location.href = 'login.html';
+            });
+        }
+        if (cancelLogout) {
+            cancelLogout.addEventListener('click', function () {
+                logoutModal.classList.remove('active');
+            });
+        }
+        logoutModal.addEventListener('click', function (e) {
+            if (e.target === logoutModal) logoutModal.classList.remove('active');
+        });
+    }
+});
+</script>
+<script src="js/script.js"></script>
+</body>
+</html>

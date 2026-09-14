@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | Stackly</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+</head>
+<body class="error-page">
+    <main class="error-shell">
+        <div class="error-card">
+            <a href="index.html" class="error-logo">
+                <img src="images/stackly-logo.webp" alt="Stackly">
+            </a>
+            <div class="error-code">404</div>
+            <span class="error-icon"><i class="uil uil-compass"></i></span>
+            <h1>Page not found</h1>
+            <p>The page you are looking for may have moved, expired, or does not exist.</p>
+            <div class="error-actions">
+                <a href="index.html" class="btn btn-primary"><i class="uil uil-home"></i> Back to Home</a>
+                <button type="button" class="btn btn-secondary" onclick="history.length > 1 ? history.back() : window.location.href='index.html'"><i class="uil uil-arrow-left"></i> Go Back</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

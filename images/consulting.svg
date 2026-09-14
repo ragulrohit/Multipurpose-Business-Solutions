@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1565c0"/>
+      <stop offset="100%" style="stop-color:#42a5f5"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)"/>
+  <!-- Light bulb / idea icon -->
+  <circle cx="200" cy="80" r="40" fill="#e3f2fd" opacity="0.15" stroke="#e3f2fd" stroke-width="2" stroke-opacity="0.4"/>
+  <circle cx="200" cy="75" r="22" fill="#e3f2fd" opacity="0.25"/>
+  <rect x="192" y="97" width="16" height="10" rx="3" fill="#e3f2fd" opacity="0.25"/>
+  <!-- Consulting arrows/flow -->
+  <path d="M120,150 Q200,120 280,150" stroke="#e3f2fd" stroke-width="2" fill="none" opacity="0.4"/>
+  <path d="M120,180 Q200,150 280,180" stroke="#e3f2fd" stroke-width="2" fill="none" opacity="0.3"/>
+  <path d="M120,210 Q200,180 280,210" stroke="#e3f2fd" stroke-width="2" fill="none" opacity="0.2"/>
+  <!-- Person with briefcase -->
+  <circle cx="100" cy="160" r="16" fill="#e3f2fd" opacity="0.8"/>
+  <rect x="88" y="176" width="24" height="32" rx="4" fill="#e3f2fd" opacity="0.75"/>
+  <rect x="78" y="200" width="14" height="10" rx="2" fill="#e3f2fd" opacity="0.6"/>
+  <!-- Arrow indicators -->
+  <polygon points="300,155 315,150 300,145" fill="#e3f2fd" opacity="0.5"/>
+  <polygon points="300,185 315,180 300,175" fill="#e3f2fd" opacity="0.4"/>
+  <polygon points="300,215 315,210 300,205" fill="#e3f2fd" opacity="0.3"/>
+  <!-- Growth chart -->
+  <polyline points="60,260 120,230 180,245 240,210 300,180 340,200" stroke="#e3f2fd" stroke-width="2" fill="none" opacity="0.3"/>
+  <polygon points="340,200 340,260 60,260" fill="#e3f2fd" opacity="0.08"/>
+</svg>
