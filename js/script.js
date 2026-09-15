@@ -124,7 +124,7 @@
             requestAnimationFrame(step);
         }
 
-        var statNumbers = document.querySelectorAll(".stat-number");
+        var statNumbers = document.querySelectorAll(".stat-number, .counter");
 
         if ("IntersectionObserver" in window && statNumbers.length) {
             var counterObserver = new IntersectionObserver(function (entries) {
@@ -477,20 +477,15 @@
                 if (!termsChecked) {
                     if (termsGroup) {
                         termsGroup.classList.add("error");
-                        var termErr = termsGroup.querySelector(".field-error");
+                        var termErr = termsGroup.querySelector(".error-message");
                         if (termErr) {
                             termErr.textContent = "You must accept the terms and conditions";
-                        } else {
-                            var tSpan = document.createElement("span");
-                            tSpan.className = "field-error";
-                            tSpan.textContent = "You must accept the terms and conditions";
-                            termsGroup.appendChild(tSpan);
                         }
                     }
                     isValid = false;
                 } else if (termsGroup) {
                     termsGroup.classList.remove("error");
-                    var termErrRm = termsGroup.querySelector(".field-error");
+                    var termErrRm = termsGroup.querySelector(".error-message");
                     if (termErrRm) termErrRm.textContent = "";
                 }
 
